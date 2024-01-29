@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cyan: #1CC8E5;
+  --dark1: #000000;
+}
+
+body {
+  /* background-color: #0A0A16; */
+  background-color: #ffffff;
+  color: rgb(14, 14, 14);
+}
+
+.animate-neon {
+  animation: neon 3s ease-in-out infinite;
+}
+
+@keyframes neon {
+  0%, 100% {
+      filter: brightness(1);
+  }
+  50% {
+      filter: brightness(2);
+  }
+}
+
