@@ -29,7 +29,7 @@ const Topbar = () => {
         </button>
         <Logo />
         <button onClick={handleHappy}>
-          <Image src={"/icons/dizzy.svg"} width={28} height={28} className="" />
+          <Image src={"/icons/bird.svg"} width={35} height={35} className="" />
         </button>
       </div>
 
