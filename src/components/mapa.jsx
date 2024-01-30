@@ -22,12 +22,12 @@ const Mapa = () => {
   }, []);
 
   return (
-    <section className="px-4">
+    <section className="px-4 h-[670px] overflow-hidden">
       <h3 className="py-2 font-medium text-slate-700">Puntos de venta</h3>
       <div
         ref={mapContainerRef}
         className="rounded-lg"
-        style={{ height: "400px" }}
+        style={{ height: "600px" }}
       />
     </section>
   );
