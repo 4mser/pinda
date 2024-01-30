@@ -31,7 +31,7 @@ export default function Cartas() {
               />
             </div>
             <p className="text-[9px] font-light py-1 text-center">
-              Arándano Lavanda
+              Arándano <br /> Lavanda
             </p>
           </Link>
         </SwiperSlide>
@@ -46,7 +46,7 @@ export default function Cartas() {
               />
             </div>
             <p className="text-[9px] font-light py-1 text-center">
-              Durazno Poleo
+              Durazno <br /> Poleo
             </p>
           </Link>
         </SwiperSlide>
@@ -61,7 +61,7 @@ export default function Cartas() {
               />
             </div>
             <p className="text-[9px] font-light py-1 text-center">
-              Mango Jengibre
+              Mango <br /> Jengibre
             </p>
           </Link>
         </SwiperSlide>
@@ -76,7 +76,7 @@ export default function Cartas() {
               />
             </div>
             <p className="text-[9px] font-light py-1 text-center">
-              Frambuesa Limón Menta
+              Frambuesa <br /> Limón Menta
             </p>
           </Link>
         </SwiperSlide>
@@ -91,7 +91,7 @@ export default function Cartas() {
               />
             </div>
             <p className="text-[9px] font-light py-1 text-center">
-              Piña Albahaca
+              Piña <br /> Albahaca
             </p>
           </Link>
         </SwiperSlide>
