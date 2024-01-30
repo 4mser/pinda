@@ -13,7 +13,7 @@ export default function Cartas() {
       <p className="py-2 font-semibold">Sabores</p>
       <Swiper
         spaceBetween={12}
-        slidesPerView={2.5}
+        slidesPerView={5}
         centeredSlides={false}
         pagination={{
           clickable: true,
@@ -23,53 +23,59 @@ export default function Cartas() {
       >
         <SwiperSlide>
           <Link href={"/tragos"}>
-            <div className="overflow-hidden  rounded-lg shadow-md border border-white/30  from-cyan-300 to-cyan-600">
+            <div className="overflow-hidden  rounded-full shadow-md border border-white/30  from-cyan-300 to-cyan-600">
               <img
                 src="/images/sabores/arandano.png"
                 alt=""
                 className="w-full h-full object-cover rounded-md"
               />
             </div>
-            <p className="text-xs font-extralight py-1 ">Arándano Lavanda</p>
+            <p className="text-[9px] font-light py-1 text-center">
+              Arándano Lavanda
+            </p>
           </Link>
         </SwiperSlide>
 
         <SwiperSlide>
           <Link href={"/sushi"}>
-            <div className="overflow-hidden  rounded-lg shadow-md border border-white/30  from-red-600 to-red-800">
+            <div className="overflow-hidden  rounded-full shadow-md border border-white/30  from-red-600 to-red-800">
               <img
                 src="/images/sabores/durazno.png"
                 alt=""
                 className="w-full h-full object-cover rounded-md"
               />
             </div>
-            <p className="text-xs font-extralight py-1 ">Durazno Poleo</p>
+            <p className="text-[9px] font-light py-1 text-center">
+              Durazno Poleo
+            </p>
           </Link>
         </SwiperSlide>
 
         <SwiperSlide>
           <Link href={"/carta"}>
-            <div className="overflow-hidden rounded-lg  shadow-md  border border-white/30  from-yellow-300 to-green-200">
+            <div className="overflow-hidden rounded-full  shadow-md  border border-white/30  from-yellow-300 to-green-200">
               <img
                 src="/images/sabores/mango.png"
                 alt=""
                 className="w-full h-full object-cover rounded-md"
               />
             </div>
-            <p className="text-xs font-extralight py-1 ">Mango Jengibre</p>
+            <p className="text-[9px] font-light py-1 text-center">
+              Mango Jengibre
+            </p>
           </Link>
         </SwiperSlide>
 
         <SwiperSlide>
           <Link href={"/carta"}>
-            <div className="overflow-hidden rounded-lg  shadow-md  border border-white/30  from-yellow-300 to-green-200">
+            <div className="overflow-hidden rounded-full  shadow-md  border border-white/30  from-yellow-300 to-green-200">
               <img
                 src="/images/sabores/frambuesa.png"
                 alt=""
                 className="w-full h-full object-cover rounded-md"
               />
             </div>
-            <p className="text-xs font-extralight py-1 ">
+            <p className="text-[9px] font-light py-1 text-center">
               Frambuesa Limón Menta
             </p>
           </Link>
@@ -77,14 +83,16 @@ export default function Cartas() {
 
         <SwiperSlide>
           <Link href={"/carta"}>
-            <div className="overflow-hidden rounded-lg  shadow-md  border border-white/30  from-yellow-300 to-green-200">
+            <div className="overflow-hidden rounded-full  shadow-md  border border-white/30  from-yellow-300 to-green-200">
               <img
                 src="/images/sabores/piña.png"
                 alt=""
                 className="w-full h-full object-cover rounded-md"
               />
             </div>
-            <p className="text-xs font-extralight py-1 ">Piña Albahaca</p>
+            <p className="text-[9px] font-light py-1 text-center">
+              Piña Albahaca
+            </p>
           </Link>
         </SwiperSlide>
       </Swiper>

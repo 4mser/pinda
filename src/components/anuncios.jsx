@@ -36,13 +36,6 @@ export default function Anuncios() {
                 alt=""
                 className="w-full h-full object-cover"
               />
-              <p className="absolute right-6 top-2 text-right font-medium text-xs text-slate-700">
-                NUEVA LÍNEA FUNCIONAL
-                <br />
-                <span className="opacity-80">
-                  Llevamos la Kombucha al siguiente nivel
-                </span>
-              </p>
             </div>
           </Link>
         </SwiperSlide>
