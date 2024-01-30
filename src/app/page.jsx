@@ -2,6 +2,7 @@ import Anuncios from "@/components/anuncios";
 import Banner from "@/components/banner";
 import Cartas from "@/components/cartas";
 import Contacto from "@/components/contacto";
+import Navbar from "@/components/navbar";
 import Topbar from "@/components/topbar";
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
       <Anuncios />
       <Cartas />
       <Contacto />
+      {/* <Navbar /> */}
     </main>
   );
 }
