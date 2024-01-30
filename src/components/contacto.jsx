@@ -10,7 +10,7 @@ const Contacto = () => {
   };
 
   const goToInstagram = () => {
-    window.location.href = "https://www.instagram.com/hotelyagan/";
+    window.location.href = "https://www.instagram.com/pinda_kombucha/";
   };
 
   // Variantes para los íconos del menú
