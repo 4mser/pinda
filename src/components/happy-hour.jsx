@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { formatDuration, intervalToDuration } from "date-fns";
-import { es } from "date-fns/locale";
 
 const HappyHour = ({ openHappy, handleHappy }) => {
   const happyVariants = {
@@ -38,31 +36,6 @@ const HappyHour = ({ openHappy, handleHappy }) => {
     },
   };
 
-  /* TIME */
-
-  const [timeUntilHappyHour, setTimeUntilHappyHour] = useState("");
-
-  useEffect(() => {
-    const updateTimer = () => {
-      const now = new Date();
-      const sixPM = new Date(now);
-      sixPM.setHours(18, 0, 0, 0); // Establece la hora a las 6 PM
-
-      // Si ya pasaron las 6 PM, ajusta para el próximo día
-      if (now > sixPM) {
-        sixPM.setDate(sixPM.getDate() + 1);
-      }
-
-      const duration = intervalToDuration({ start: now, end: sixPM });
-      setTimeUntilHappyHour(formatDuration(duration, { locale: es })); // Formato en español
-    };
-
-    const timerId = setInterval(updateTimer, 1000); // Actualiza cada segundo
-
-    // Limpieza del intervalo cuando el componente se desmonte
-    return () => clearInterval(timerId);
-  }, []);
-
   return (
     <AnimatePresence>
       {openHappy && (
@@ -82,12 +55,12 @@ const HappyHour = ({ openHappy, handleHappy }) => {
             exit="closed"
           >
             <img
-              src="https://app-valdi.s3.amazonaws.com/yagan/anuncios/happyHour.png"
+              src="/images/frambuesa.png"
               alt="hH"
-              className="w-full object-contain px-5 animate-neon"
+              className="w-full object-contain rounded-2xl"
             />
             <p className="text-center">
-              Quedan: {timeUntilHappyHour} para el happy hour
+              Aquí podemos poner descuentos o algo interesante
             </p>
           </motion.div>
         </motion.div>
