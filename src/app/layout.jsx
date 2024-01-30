@@ -6,17 +6,20 @@ import Navbar from "@/components/navbar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "YAGÁN",
-  description: "Hotel Restobar",
+  title: "Pinda Kombucha",
+  description: "Destapa tu bienestar",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <meta property="og:image" content="https://app-valdi.s3.amazonaws.com/yagan/logotipo_Mesa+de+trabajo+1+copia+5.png" />
+        <meta
+          property="og:image"
+          content="https://i0.wp.com/pindakombucha.cl/wp-content/uploads/2022/12/Pinda-Kombucha-Brand-e1683471453267.png?fit=607%2C766&ssl=1"
+        />
       </head>
-      
+
       <body>
         <Topbar />
         {children}
