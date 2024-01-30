@@ -10,7 +10,7 @@ const Contacto = () => {
   };
 
   const goToInstagram = () => {
-    window.location.href = "https://www.instagram.com/pinda_kombucha";
+    window.location.href = "https://www.instagram.com/hotelyagan/";
   };
 
   // Variantes para los íconos del menú
@@ -34,6 +34,7 @@ const Contacto = () => {
     {
       onClick: toggleMenu,
       imgSrc: "/icons/pushpin.svg",
+      imgClass: "w-7",
       btnClass:
         "rounded-full bg-gradient-to-tr from-indigo-100 to-sky-100 w-14 h-14 flex justify-center items-center",
       variants: buttonVariants,
@@ -41,6 +42,7 @@ const Contacto = () => {
     {
       onClick: goToInstagram,
       imgSrc: "/icons/instagram.svg",
+      imgClass: "w-6 opacity-85",
       btnClass:
         "absolute bottom-0 right-16 rounded-full bg-gradient-to-tr from-pink-500 via-red-500 to-yellow-500 w-10 h-10 flex justify-center items-center",
       variants: menuVariants,
@@ -48,6 +50,7 @@ const Contacto = () => {
     {
       onClick: () => {},
       imgSrc: "/icons/mail.svg",
+      imgClass: "w-6 opacity-85",
       btnClass:
         "absolute bottom-16 right-0 rounded-full bg-gradient-to-tr from-blue-500 to-blue-900 w-10 h-10 flex justify-center items-center",
       variants: menuVariants,
@@ -55,6 +58,7 @@ const Contacto = () => {
     {
       onClick: () => {},
       imgSrc: "/icons/wsp.svg",
+      imgClass: "w-6 opacity-85",
       btnClass:
         "absolute bottom-12 right-12 rounded-full bg-gradient-to-tr from-green-600 to-yellow-500 w-10 h-10 flex justify-center items-center",
       variants: menuVariants,
@@ -71,7 +75,7 @@ const Contacto = () => {
           variants={button.variants}
           animate={menuOpen ? "open" : "closed"}
         >
-          <img src={button.imgSrc} alt="" className="w-6 opacity-85" />
+          <img src={button.imgSrc} alt="" className={button.imgClass} />
         </motion.button>
       ))}
     </section>
