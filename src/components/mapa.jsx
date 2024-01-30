@@ -28,7 +28,7 @@ const Mapa = () => {
       <h3 className="py-2 font-medium text-slate-700">Puntos de venta</h3>
       <div
         ref={mapContainerRef}
-        className="map-container"
+        className="rounded-lg"
         style={{ height: "400px" }}
       />
     </section>
