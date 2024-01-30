@@ -10,7 +10,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 export default function Cartas() {
   return (
     <main className="pt-3 left-0 w-full overflow-hidden px-4">
-      <p className="py-2 font-semibold">Sabores</p>
+      <p className="py-2 font-medium text-slate-700">Sabores</p>
       <Swiper
         spaceBetween={12}
         slidesPerView={5}
@@ -30,7 +30,7 @@ export default function Cartas() {
                 className="w-full h-full object-cover rounded-md"
               />
             </div>
-            <p className="text-[9px] font-light py-1 text-center">
+            <p className="text-[9px] font-normal text-slate-700 py-1 text-center">
               Arándano <br /> Lavanda
             </p>
           </Link>
@@ -45,7 +45,7 @@ export default function Cartas() {
                 className="w-full h-full object-cover rounded-md"
               />
             </div>
-            <p className="text-[9px] font-light py-1 text-center">
+            <p className="text-[9px] font-normal text-slate-700 py-1 text-center">
               Durazno <br /> Poleo
             </p>
           </Link>
@@ -60,7 +60,7 @@ export default function Cartas() {
                 className="w-full h-full object-cover rounded-md"
               />
             </div>
-            <p className="text-[9px] font-light py-1 text-center">
+            <p className="text-[9px] font-normal text-slate-700 py-1 text-center">
               Mango <br /> Jengibre
             </p>
           </Link>
@@ -75,7 +75,7 @@ export default function Cartas() {
                 className="w-full h-full object-cover rounded-md"
               />
             </div>
-            <p className="text-[9px] font-light py-1 text-center">
+            <p className="text-[9px] font-normal text-slate-700 py-1 text-center">
               Frambuesa <br /> Limón Menta
             </p>
           </Link>
@@ -90,7 +90,7 @@ export default function Cartas() {
                 className="w-full h-full object-cover rounded-md"
               />
             </div>
-            <p className="text-[9px] font-light py-1 text-center">
+            <p className="text-[9px] font-normal text-slate-700 py-1 text-center">
               Piña <br /> Albahaca
             </p>
           </Link>
