@@ -80,7 +80,7 @@ export default function Cartas() {
       >
         {sabores.map((sabor, index) => (
           <SwiperSlide key={index}>
-            <div className="overflow-hidden rounded-full shadow-md border border-white/30">
+            <div className="overflow-hidden rounded-full shadow-md ">
               <img
                 src={sabor.image}
                 alt={sabor.title}
