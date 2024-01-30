@@ -39,13 +39,13 @@ export default function Anuncios() {
               <p className="rounded-xl px-2 py-1 bg-slate-900 absolute right-7 top-4 text-white text-[10px] font-medium">
                 NUEVA LINEA FUNCIONAL
               </p>
-              <p className="absolute right-8 top-14 text-right text-[14px] font-[500]">
+              <p className="absolute right-8 top-[50px] text-right text-[14px] font-[500]">
                 Potencia tu equilibrio <br />y activa tu claridad
               </p>
-              <p className="absolute right-8 top-28 text-right text-[10px] font-normal">
-                Fusionamos la fermentación ancestral con <br /> potentes
-                extractos fúngicos y botánicos, creando <br />
-                una súper bebida diseñada para maximizar tu bienestar.
+              <p className="absolute right-8 top-[100px] text-right text-[10px] font-normal">
+                Fusionamos la fermentación ancestral <br /> con potentes
+                extractos fúngicos y <br /> botánicos, creando una súper bebida
+                <br /> diseñada para maximizar tu bienestar.
               </p>
             </div>
           </Link>
