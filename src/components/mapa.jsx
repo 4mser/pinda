@@ -14,7 +14,7 @@ const Mapa = () => {
     const map = new mapboxgl.Map({
       container: mapContainerRef.current,
       // Puedes elegir otro estilo de mapa aquí
-      style: "mapbox://styles/4mser/clrzsolqf01dz01o84qsn4kv9",
+      style: "mapbox://styles/4mser/clrzt2pyg01fu01p1hdqu1elg",
     });
 
     // Limpieza al desmontar el componente
