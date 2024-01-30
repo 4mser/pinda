@@ -14,9 +14,7 @@ const Mapa = () => {
     const map = new mapboxgl.Map({
       container: mapContainerRef.current,
       // Puedes elegir otro estilo de mapa aquí
-      style: "mapbox://styles/mapbox/streets-v12",
-      center: [-73.24589, -39.81422], // Longitud y latitud del centro del mapa
-      zoom: 13, // Nivel de zoom inicial
+      style: "mapbox://styles/4mser/clpegmsjp006a01qj1ihv67v1",
     });
 
     // Limpieza al desmontar el componente
