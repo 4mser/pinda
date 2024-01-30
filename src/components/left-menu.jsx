@@ -52,7 +52,7 @@ const LeftMenu = ({ openMenu, handleMenu }) => {
           onClick={handleMenu}
         >
           <motion.ul
-            className="w-fit min-h-[100dvh] bg-gradient-to-tr from-indigo-50 to-sky-50 border-r border-indigo-300/10 p-8 pt-20 pr-20 flex flex-col gap-6"
+            className="w-fit min-h-[100dvh] bg-gradient-to-tr from-indigo-50 to-sky-50 border-r border-indigo-300/10 p-8 pt-20 pr-14 flex flex-col gap-6"
             variants={menuVariants}
             initial="closed"
             animate="open"
