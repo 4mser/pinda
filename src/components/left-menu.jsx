@@ -32,9 +32,11 @@ const LeftMenu = ({ openMenu, handleMenu }) => {
   // Datos de los elementos del menú
   const menuItems = [
     { href: "/", icon: "/icons/home-diamond.svg", text: "Inicio" },
-    { icon: "/icons/hotel.svg", text: "Puntos de venta" },
-    { icon: "/icons/bow-and-arrow.svg", text: "Historia y Patrimonio" },
+    { icon: "/icons/pushpin.svg", text: "Puntos de venta" },
+    { icon: "/icons/dizzy.svg", text: "Historia y Beneficios" },
+    { icon: "/icons/cocktail-glass.svg", text: "Coctelería" },
     { icon: "/icons/events.svg", text: "Eventos" },
+    { icon: "/icons/recycling.svg", text: "Reutilización y Sostenibilidad" },
     { icon: "/icons/contact.svg", text: "Nosotros" },
   ];
 
