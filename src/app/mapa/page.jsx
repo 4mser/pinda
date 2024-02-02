@@ -23,12 +23,8 @@ const page = () => {
   }, []);
 
   return (
-    <section className=" min-h-[100dvh] overflow-hidden">
-      <div
-        ref={mapContainerRef}
-        className="rounded-lg"
-        style={{ height: "100%" }}
-      />
+    <section className=" max-h-[100dvh] overflow-hidden">
+      <div ref={mapContainerRef} style={{ minHeight: "100dvh" }} />
     </section>
   );
 };
