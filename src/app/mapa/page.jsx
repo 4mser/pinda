@@ -2,7 +2,6 @@
 
 import React, { useRef, useEffect } from "react";
 import mapboxgl from "mapbox-gl";
-import Link from "next/link";
 
 // Establece tu Access Token de Mapbox aquí
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
