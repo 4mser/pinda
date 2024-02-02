@@ -3,7 +3,8 @@
 import React, { useRef, useEffect, useState } from "react";
 import mapboxgl from "mapbox-gl";
 import puntosPinda from "../data/puntosPinda.js"; // Asegura que la ruta sea correcta
-import Modal from "./modal.jsx";
+import Modal from "./modal.jsx"; // Asegúrate de que el camino sea correcto
+
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
 
 const MapaCompleto = () => {
@@ -19,47 +20,54 @@ const MapaCompleto = () => {
     });
 
     map.on("load", () => {
-      map.addSource("puntosPinda", {
-        type: "geojson",
-        data: puntosPinda,
+      // Carga un ícono de la carpeta pública (ajusta la ruta según sea necesario)
+      map.loadImage("/images/logoPinda.png", (error, image) => {
+        if (error) throw error;
+        map.addImage("custom-icon", image);
+
+        map.addSource("puntosPinda", {
+          type: "geojson",
+          data: puntosPinda,
+        });
+
+        // Utiliza el ícono cargado en lugar de un círculo
+        map.addLayer({
+          id: "puntos-iconos",
+          type: "symbol",
+          source: "puntosPinda",
+          layout: {
+            "icon-image": "custom-icon", // Usa el ícono cargado
+            "icon-size": 0.7, // Ajusta el tamaño del ícono según sea necesario
+          },
+        });
+
+        map.addLayer({
+          id: "puntos-texto",
+          type: "symbol",
+          source: "puntosPinda",
+          layout: {
+            "text-field": ["get", "location"],
+            "text-offset": [0, 1.2],
+            "text-anchor": "top",
+            "text-size": 12,
+          },
+          paint: {
+            "text-color": "#000000",
+          },
+        });
       });
 
-      map.addLayer({
-        id: "puntos-circulos",
-        type: "circle",
-        source: "puntosPinda",
-        paint: {
-          "circle-radius": 8,
-          "circle-color": "#007cbf",
-        },
+      // Evento de clic y cambio de cursor igual que antes
+      map.on("click", "puntos-iconos", (e) => {
+        const properties = e.features[0].properties;
+        setModalInfo({ isOpen: true, data: properties });
       });
 
-      map.addLayer({
-        id: "puntos-texto",
-        type: "symbol",
-        source: "puntosPinda",
-        layout: {
-          "text-field": ["get", "location"],
-          "text-offset": [0, 1.2],
-          "text-anchor": "top",
-          "text-size": 12,
-        },
-        paint: {
-          "text-color": "#000000",
-        },
-      });
-
-      // Evento de clic para abrir el modal con la información del punto
-      map.on("click", "puntos-circulos", (e) => {
-        const properties = e.features[0].properties; // Obtiene las propiedades del puntoPinda
-        setModalInfo({ isOpen: true, data: properties }); // Actualiza el estado para abrir el modal
-      });
-
-      // Cambia el cursor a un puntero al pasar sobre los puntos
-      map.on("mouseenter", "puntos-circulos", () => {
+      map.on("mouseenter", "puntos-iconos", () => {
         map.getCanvas().style.cursor = "pointer";
       });
-      map.on("mouseleave", "puntos-circulos", () => {
+
+      map.on("mouseleave", "puntos-iconos", () => {
         map.getCanvas().style.cursor = "";
       });
     });

@@ -5,14 +5,14 @@ const Modal = ({ isOpen, onClose, data }) => {
 
   return (
     <div className="fixed z-50 inset-0 overflow-y-auto">
-      <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+      <div className="flex items-end justify-center min-h-[100dvh] pt-4 px-4 pb-20 text-center sm:block sm:p-0">
         <div className="fixed inset-0 transition-opacity" aria-hidden="true">
           <div className="absolute inset-0 bg-black opacity-80"></div>
         </div>
 
         {/* Este div es el fondo del modal y también captura los clics fuera del modal para cerrarlo */}
         <div
-          className="hidden sm:inline-block sm:align-middle sm:h-screen"
+          className="hidden sm:inline-block sm:align-middle sm:h-[100dvh]"
           aria-hidden="true"
         >
           &#8203;
