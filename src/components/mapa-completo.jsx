@@ -10,6 +10,7 @@ const MapaCompleto = () => {
   const mapContainerRef = useRef(null);
   const [modalInfo, setModalInfo] = useState({ isOpen: false, data: null });
   const [mapInstance, setMapInstance] = useState(null);
+  const [userLocation, setUserLocation] = useState(null);
 
   useEffect(() => {
     const map = new mapboxgl.Map({
@@ -86,9 +87,34 @@ const MapaCompleto = () => {
     return () => mapInstance && mapInstance.remove();
   }, []);
 
+  const goToUserLocation = () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const { latitude, longitude } = position.coords;
+          mapInstance.flyTo({
+            center: [longitude, latitude],
+            zoom: 14,
+          });
+        },
+        () => {
+          alert("No se pudo obtener tu ubicación");
+        }
+      );
+    } else {
+      alert("Tu navegador no soporta el acceso a la ubicación");
+    }
+  };
+
   return (
     <>
       <div ref={mapContainerRef} style={{ width: "100%", height: "100vh" }} />
+      <button
+        onClick={goToUserLocation}
+        className="absolute z-50 right-5 bottom-5 bg-gradient-to-tr from-green-500 to-cyan-400 p-2 rounded-3xl text-white px-3"
+      >
+        Ir a mi ubicación
+      </button>
       {modalInfo.isOpen && (
         <Modal
           isOpen={modalInfo.isOpen}
