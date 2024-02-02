@@ -37,7 +37,7 @@ const MapaCompleto = () => {
           source: "puntosPinda",
           layout: {
             "icon-image": "custom-icon", // Usa el ícono cargado
-            "icon-size": 0.7, // Ajusta el tamaño del ícono según sea necesario
+            "icon-size": 0.5, // Ajusta el tamaño del ícono según sea necesario
           },
         });
 
@@ -47,7 +47,7 @@ const MapaCompleto = () => {
           source: "puntosPinda",
           layout: {
             "text-field": ["get", "location"],
-            "text-offset": [0, 1.2],
+            "text-offset": [0, 2],
             "text-anchor": "top",
             "text-size": 12,
           },
