@@ -27,7 +27,7 @@ const page = () => {
       <div
         ref={mapContainerRef}
         className="rounded-lg"
-        style={{ height: "100vh" }}
+        style={{ height: "100%" }}
       />
     </section>
   );
