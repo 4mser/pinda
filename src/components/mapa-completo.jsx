@@ -40,29 +40,75 @@ const MapaCompleto = () => {
           },
         });
 
+        // Aquí agregas el marcador de la ubicación del usuario
         navigator.geolocation.getCurrentPosition((position) => {
           const { latitude, longitude } = position.coords;
-          map.flyTo({
-            center: [longitude, latitude],
-            zoom: 15,
+          map.loadImage("/images/doge.png", (error, image) => {
+            // Asegúrate de tener una imagen '/images/marker.png'
+            if (error) throw error;
+            map.addImage("user-location-icon", image);
+            map.addLayer({
+              id: "user-location",
+              type: "symbol",
+              source: {
+                type: "geojson",
+                data: {
+                  type: "FeatureCollection",
+                  features: [
+                    {
+                      type: "Feature",
+                      geometry: {
+                        type: "Point",
+                        coordinates: [longitude, latitude],
+                      },
+                    },
+                  ],
+                },
+              },
+              layout: {
+                "icon-image": "user-location-icon",
+                "icon-size": 0.04,
+              },
+            });
           });
+        });
+
+        map.addLayer({
+          id: "puntos-texto",
+          type: "symbol",
+          source: "puntosPinda",
+          layout: {
+            "text-field": ["get", "location"],
+            "text-offset": [0, 2],
+            "text-anchor": "top",
+            "text-size": 12,
+          },
+          paint: {
+            "text-color": "#000000",
+          },
+          minzoom: 15,
         });
       });
 
-      map.addLayer({
-        id: "puntos-texto",
-        type: "symbol",
-        source: "puntosPinda",
-        layout: {
-          "text-field": ["get", "location"],
-          "text-offset": [0, 2],
-          "text-anchor": "top",
-          "text-size": 12,
-        },
-        paint: {
-          "text-color": "#000000",
-        },
-        minzoom: 15,
+      map.on("click", "puntos-iconos", (e) => {
+        const properties = e.features[0].properties;
+        const coordinates = e.features[0].geometry.coordinates;
+        setModalInfo({ isOpen: true, data: properties });
+        map.flyTo({
+          center: coordinates,
+          zoom: 17,
+          pitch: 60,
+          bearing: -25,
+          essential: true,
+        });
+      });
+
+      map.on("mouseenter", "puntos-iconos", () => {
+        map.getCanvas().style.cursor = "pointer";
+      });
+
+      map.on("mouseleave", "puntos-iconos", () => {
+        map.getCanvas().style.cursor = "";
       });
 
       setMapInstance(map);
@@ -86,8 +132,7 @@ const MapaCompleto = () => {
       <div ref={mapContainerRef} style={{ width: "100%", height: "100vh" }} />
       <button
         onClick={goToUserLocation}
-        className="absolute bottom-5 left-5 z-10 bg-blue-500 text-white p-2 rounded-md cursor-pointer hover:bg-blue-700"
-        style={{ touchAction: "none" }} // Añadido para mejorar la interactividad en dispositivos táctiles
+        className="absolute bottom-4 right-4 z-10 p-2 bg-blue-500 text-white rounded-full"
       >
         Ir a mi ubicación
       </button>
