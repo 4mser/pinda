@@ -38,10 +38,11 @@ const MapaCompleto = () => {
           layout: {
             "icon-image": "custom-icon", // Usa el ícono cargado
             "icon-size": 0.5, // Ajusta el tamaño del ícono según sea necesario
+            "icon-allow-overlap": true,
           },
         });
 
-        map.addLayer({
+        /* map.addLayer({
           id: "puntos-texto",
           type: "symbol",
           source: "puntosPinda",
@@ -54,7 +55,7 @@ const MapaCompleto = () => {
           paint: {
             "text-color": "#000000",
           },
-        });
+        }); */
       });
 
       // Evento de clic y cambio de cursor igual que antes
