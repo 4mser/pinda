@@ -1,15 +1,15 @@
 "use client";
-
 import React, { useRef, useEffect, useState } from "react";
 import mapboxgl from "mapbox-gl";
-import puntosPinda from "../data/puntosPinda.js"; // Asegura que la ruta sea correcta
-import Modal from "./modal.jsx"; // Asegúrate de que el camino sea correcto
+import puntosPinda from "../data/puntosPinda.js";
+import Modal from "./modal.jsx";
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
 
 const MapaCompleto = () => {
   const mapContainerRef = useRef(null);
   const [modalInfo, setModalInfo] = useState({ isOpen: false, data: null });
+  const [mapInstance, setMapInstance] = useState(null);
 
   useEffect(() => {
     const map = new mapboxgl.Map({
@@ -20,7 +20,6 @@ const MapaCompleto = () => {
     });
 
     map.on("load", () => {
-      // Carga un ícono de la carpeta pública (ajusta la ruta según sea necesario)
       map.loadImage("/images/logoPinda.png", (error, image) => {
         if (error) throw error;
         map.addImage("custom-icon", image);
@@ -30,14 +29,13 @@ const MapaCompleto = () => {
           data: puntosPinda,
         });
 
-        // Utiliza el ícono cargado en lugar de un círculo
         map.addLayer({
           id: "puntos-iconos",
           type: "symbol",
           source: "puntosPinda",
           layout: {
-            "icon-image": "custom-icon", // Usa el ícono cargado
-            "icon-size": 0.5, // Ajusta el tamaño del ícono según sea necesario
+            "icon-image": "custom-icon",
+            "icon-size": 0.5,
             "icon-allow-overlap": true,
           },
         });
@@ -46,7 +44,6 @@ const MapaCompleto = () => {
           id: "puntos-texto",
           type: "symbol",
           source: "puntosPinda",
-          minzoom: 15,
           layout: {
             "text-field": ["get", "location"],
             "text-offset": [0, 2],
@@ -56,13 +53,23 @@ const MapaCompleto = () => {
           paint: {
             "text-color": "#000000",
           },
+          minzoom: 15, // Asegura que el texto solo aparece cuando el zoom es 15 o más
         });
       });
 
-      // Evento de clic y cambio de cursor igual que antes
       map.on("click", "puntos-iconos", (e) => {
         const properties = e.features[0].properties;
+        const coordinates = e.features[0].geometry.coordinates;
         setModalInfo({ isOpen: true, data: properties });
+
+        // Mueve el mapa hacia la coordenada seleccionada con efecto 3D
+        map.flyTo({
+          center: coordinates,
+          zoom: 17,
+          pitch: 60,
+          bearing: -25,
+          essential: true, // Esto asegura que el movimiento se considere esencial para la accesibilidad
+        });
       });
 
       map.on("mouseenter", "puntos-iconos", () => {
@@ -72,9 +79,11 @@ const MapaCompleto = () => {
       map.on("mouseleave", "puntos-iconos", () => {
         map.getCanvas().style.cursor = "";
       });
+
+      setMapInstance(map);
     });
 
-    return () => map.remove();
+    return () => mapInstance && mapInstance.remove();
   }, []);
 
   return (
