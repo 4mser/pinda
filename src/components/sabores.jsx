@@ -67,7 +67,7 @@ const sabores = [
   },
 ];
 
-export default function Cartas() {
+export default function Sabores() {
   return (
     <main className="pt-3 left-0 w-full px-4">
       <p className="py-2 font-medium text-slate-700">Sabores</p>
