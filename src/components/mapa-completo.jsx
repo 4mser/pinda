@@ -132,7 +132,7 @@ const MapaCompleto = () => {
       <div ref={mapContainerRef} style={{ width: "100%", height: "100vh" }} />
       <button
         onClick={goToUserLocation}
-        className="absolute bottom-4 right-4 z-10 p-2 bg-blue-500 text-white rounded-full"
+        className="absolute bottom-4 right-4 z-10 p-2 px-4 bg-gradient-to-tr from-green-500 to-cyan-500 text-white rounded-full"
       >
         Ir a mi ubicación
       </button>
