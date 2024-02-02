@@ -42,10 +42,11 @@ const MapaCompleto = () => {
           },
         });
 
-        /* map.addLayer({
+        map.addLayer({
           id: "puntos-texto",
           type: "symbol",
           source: "puntosPinda",
+          minzoom: 15,
           layout: {
             "text-field": ["get", "location"],
             "text-offset": [0, 2],
@@ -55,7 +56,7 @@ const MapaCompleto = () => {
           paint: {
             "text-color": "#000000",
           },
-        }); */
+        });
       });
 
       // Evento de clic y cambio de cursor igual que antes
