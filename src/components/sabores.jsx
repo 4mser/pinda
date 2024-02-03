@@ -10,9 +10,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Data for each SwiperSlide
 const sabores = [
   {
-    image: "/images/sabores/natural.png",
-    title: "Natural",
-    subtitle: "",
+    image: "/images/sabores/jazmin.png",
+    title: "Jazmin Melena",
+    subtitle: "de León",
   },
   {
     image: "/images/sabores/arandano.png",
@@ -61,9 +61,9 @@ const sabores = [
   },
 
   {
-    image: "/images/sabores/jazmin.png",
-    title: "Jazmin Melena",
-    subtitle: "de León",
+    image: "/images/sabores/natural.png",
+    title: "Natural",
+    subtitle: "",
   },
 ];
 
