@@ -3,8 +3,40 @@ import React, { useRef, useEffect, useState } from "react";
 import mapboxgl from "mapbox-gl";
 import puntosPinda from "../data/puntosPinda.js";
 import Modal from "./modal.jsx";
+import ModalTest from "./moda-test.jsx";
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
+
+function distanciaLocalMasCercano(coords1, coords2, isMiles = false) {
+  function toRad(x) {
+    return (x * Math.PI) / 180;
+  }
+
+  const lon1 = coords1[0];
+  const lat1 = coords1[1];
+
+  const lon2 = coords2[0];
+  const lat2 = coords2[1];
+
+  const R = 6371; // km
+
+  const x1 = lat2 - lat1;
+  const dLat = toRad(x1);
+  const x2 = lon2 - lon1;
+  const dLon = toRad(x2);
+  const a =
+    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos(toRad(lat1)) *
+      Math.cos(toRad(lat2)) *
+      Math.sin(dLon / 2) *
+      Math.sin(dLon / 2);
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  let d = R * c;
+
+  if (isMiles) d /= 1.60934;
+
+  return d;
+}
 
 const MapaCompleto = () => {
   const mapContainerRef = useRef(null);
@@ -155,7 +187,7 @@ const MapaCompleto = () => {
         Ir a mi ubicación
       </button>
       {modalInfo.isOpen && (
-        <Modal
+        <ModalTest
           isOpen={modalInfo.isOpen}
           onClose={() => setModalInfo({ isOpen: false, data: null })}
           data={modalInfo.data}

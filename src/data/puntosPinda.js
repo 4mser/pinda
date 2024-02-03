@@ -7,7 +7,7 @@ const puntosPinda = {
         "location": "EMPORIO GRANEL TEMUCO",
         "boro_name": "TEMUCO",
         "street": "AVDA MARTIN LUTERO 02184",
-        "neighborhood": "TEMUCO"
+        "neighborhood": "TEMUCO",
       },
       "geometry": {
         "type": "Point",
@@ -228,7 +228,8 @@ const puntosPinda = {
         "location": "BAR BUNDOR",
         "boro_name": "VALDIVIA",
         "street": "KM 25 NORTE,CAYUMAPU",
-        "neighborhood": "VALDIVIA"
+        "neighborhood": "VALDIVIA",
+        "image": "https://tiemporeal.periodismoudec.cl/wp-content/uploads/2022/04/Bundor-765x496.png"
       },
       "geometry": {
         "type": "Point",
