@@ -31,17 +31,12 @@ const Modal = ({ isOpen, onClose, data }) => {
                   className="text-lg leading-6 font-medium text-gray-900"
                   id="modal-headline"
                 >
-                  Punto de venta Pinda
+                  {data.location}
                 </h3>
                 <div className="mt-2">
-                  <p className="text-sm text-gray-500">
-                    Aquí podemos mostrar info relevante del punto de venta Pinda
-                    seleccionado.
-                  </p>
+                  <p className="text-sm text-gray-500">{data.street}</p>
                   {/* Ejemplo de cómo mostrar datos pasados al modal */}
-                  <p className="text-sm text-gray-500">
-                    Local: {data.location}
-                  </p>
+                  <p className="text-sm text-gray-500">{data.neighborhood}</p>
                   {/* Añade más campos según necesites */}
                 </div>
               </div>

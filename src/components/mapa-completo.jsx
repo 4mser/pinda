@@ -12,8 +12,6 @@ const MapaCompleto = () => {
   const [mapInstance, setMapInstance] = useState(null);
 
   useEffect(() => {
-    const now = new Date();
-
     const map = new mapboxgl.Map({
       container: mapContainerRef.current,
       style: "mapbox://styles/4mser/cls57alt7026701o89e1naf6a",

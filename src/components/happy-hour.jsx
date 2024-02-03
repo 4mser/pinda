@@ -40,7 +40,7 @@ const HappyHour = ({ openHappy, handleHappy }) => {
     <AnimatePresence>
       {openHappy && (
         <motion.div
-          className="fixed z-50 left-0 top-0 w-full min-h-screen backdrop-blur-xl flex justify-center items-center"
+          className="fixed z-50 left-0 top-0 w-full min-h-[100dvh] backdrop-blur-xl flex justify-center items-center"
           variants={backdropHappyVariants}
           initial="closed"
           animate="open"
@@ -48,7 +48,7 @@ const HappyHour = ({ openHappy, handleHappy }) => {
           onClick={handleHappy}
         >
           <motion.div
-            className="w-fit  ounded-2xl items-center   p-10 flex flex-col gap-4"
+            className="h-fit  ounded-2xl items-center   p-10 flex flex-col gap-4"
             variants={happyVariants}
             initial="closed"
             animate="open"
