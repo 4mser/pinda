@@ -215,7 +215,8 @@ const puntosPinda = {
         "location": "MIA BAR",
         "boro_name": "VALDIVIA",
         "street": "LOS ROBLES 075",
-        "neighborhood": "ISLA TEJA"
+        "neighborhood": "ISLA TEJA",
+        "image": "https://media-cdn.tripadvisor.com/media/photo-s/1a/b8/b0/8c/mia-bar.jpg"
       },
       "geometry": {
         "type": "Point",
@@ -242,7 +243,8 @@ const puntosPinda = {
         "location": "LA ROTONDA LIQUOR STORE",
         "boro_name": "VALDIVIA",
         "street": "LOS ROBLES 500",
-        "neighborhood": "ISLA TEJA"
+        "neighborhood": "ISLA TEJA",
+        "image": "https://th.bing.com/th/id/OIP.kMM0VHmfxr64by8cCbxNWQHaHY?rs=1&pid=ImgDetMain"
       },
       "geometry": {
         "type": "Point",

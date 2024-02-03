@@ -23,7 +23,7 @@ const Mapa = () => {
   }, []);
 
   return (
-    <section className="px-4 h-[670px] overflow-hidden">
+    <section className="px-4 h-[270px] overflow-hidden">
       <div className="w-full flex justify-between py-2 items-center">
         <h3 className=" font-medium text-slate-700">Puntos de venta</h3>
         <Link href={"/mapa"}>
@@ -34,8 +34,7 @@ const Mapa = () => {
       </div>
       <div
         ref={mapContainerRef}
-        className="rounded-lg"
-        style={{ height: "600px" }}
+        style={{ height: "220px", borderRadius: "10px", overflow: "hidden" }}
       />
     </section>
   );
