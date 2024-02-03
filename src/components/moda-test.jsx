@@ -31,7 +31,7 @@ const ModalTest = ({ isOpen, onClose, data }) => {
             </p>
             <div className="flex items-center flex-col mb-16 px-7">
               <p className="font-normal text-xs pt-1">
-                {data.street} - {data.neighborhood}
+                {data.street} - {data.neighborhood}, {data.boro_name}
               </p>
               <img src={data.image} alt="" className="mt-3 rounded-xl" />
             </div>

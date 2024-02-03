@@ -227,8 +227,8 @@ const puntosPinda = {
       "properties": {
         "location": "BAR BUNDOR",
         "boro_name": "VALDIVIA",
-        "street": "KM 25 NORTE,CAYUMAPU",
-        "neighborhood": "VALDIVIA",
+        "street": "KM 25 NORTE, CAYUMAPU",
+        "neighborhood": "ISLA TEJA",
         "image": "https://tiemporeal.periodismoudec.cl/wp-content/uploads/2022/04/Bundor-765x496.png"
       },
       "geometry": {
