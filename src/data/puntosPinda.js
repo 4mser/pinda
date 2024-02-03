@@ -232,7 +232,7 @@ const puntosPinda = {
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [-73.25497043259440, -39.809587482362900]
+        "coordinates": [-73.25479079217702, -39.809747454125684]
       }
     },
     {
