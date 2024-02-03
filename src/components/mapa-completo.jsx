@@ -129,7 +129,7 @@ const MapaCompleto = () => {
           source: "puntosPinda",
           layout: {
             "text-field": ["get", "location"],
-            "text-offset": [0, 2],
+            "text-offset": [0, 1.7],
             "text-anchor": "top",
             "text-size": 12,
           },

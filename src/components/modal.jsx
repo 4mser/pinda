@@ -10,7 +10,6 @@ const Modal = ({ isOpen, onClose, data }) => {
           <div className="absolute inset-0 bg-black opacity-80"></div>
         </div>
 
-        {/* Este div es el fondo del modal y también captura los clics fuera del modal para cerrarlo */}
         <div
           className="hidden sm:inline-block sm:align-middle sm:h-[100dvh]"
           aria-hidden="true"
@@ -35,9 +34,7 @@ const Modal = ({ isOpen, onClose, data }) => {
                 </h3>
                 <div className="mt-2">
                   <p className="text-sm text-gray-500">{data.street}</p>
-                  {/* Ejemplo de cómo mostrar datos pasados al modal */}
                   <p className="text-sm text-gray-500">{data.neighborhood}</p>
-                  {/* Añade más campos según necesites */}
                 </div>
               </div>
             </div>
@@ -50,7 +47,6 @@ const Modal = ({ isOpen, onClose, data }) => {
             >
               Cerrar
             </button>
-            {/* Puedes añadir más botones o contenido aquí */}
           </div>
         </div>
       </div>
