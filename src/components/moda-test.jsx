@@ -17,7 +17,7 @@ const ModalTest = ({ isOpen, onClose, data }) => {
                 onClose();
               }
             }}
-            className="menu fixed z-[61] bottom-0 left-0  w-full h-fit backdrop-blur-xl select-none border-t border-white/10 rounded-t-[40px] overflow-hidden"
+            className="menu fixed z-[61] bottom-0 left-0  w-full h-fit backdrop-blur-md select-none border-t border-black/10 shadow-xl rounded-t-[40px] overflow-hidden"
             initial={{ y: "100%" }}
             animate={{ y: 0 }}
             exit={{ y: "100%" }}
