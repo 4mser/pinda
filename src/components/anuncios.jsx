@@ -82,7 +82,7 @@ export default function Anuncios() {
                 />
                 
               </div>
-              <div className="absolute right-10 top-[66px] flex flex-col gap-14">
+              <div className="absolute right-8 top-[66px] flex flex-col gap-14">
               <Image 
                   src="/banners/mente_lucida/txt_banner_1.svg"
                   alt=""
