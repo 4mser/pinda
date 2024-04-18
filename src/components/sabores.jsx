@@ -49,11 +49,11 @@ export default function Sabores() {
       >
         {sabores.map((sabor, index) => (
           <SwiperSlide key={index}>
-            <div className="overflow-hidden px-2">
+            <div className="overflow-hidden">
               <img
                 src={sabor.image}
                 alt={sabor.title}
-                className="w-full h-full object-cover rounded-md"
+                className="w-full h-full object-cover rounded-md filter drop-shadow-md"
               />
             </div>
             <p className="text-[12px] font-normal text-slate-700 py-1 text-center">
