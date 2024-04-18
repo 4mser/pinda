@@ -39,7 +39,7 @@ const sabores = [
 export default function Sabores() {
   return (
     <main className="pt-3 left-0 w-full px-4">
-      <p className="py-2 font-medium text-slate-700">Sabores de siempre</p>
+      <p className="py-3 font-medium text-slate-700">Sabores de siempre</p>
       <Swiper
         spaceBetween={12}
         slidesPerView={5}
@@ -56,7 +56,7 @@ export default function Sabores() {
                 className="w-full h-full object-cover rounded-md"
               />
             </div>
-            <p className="text-[9px] font-normal text-slate-700 py-1 text-center">
+            <p className="text-[12px] font-normal text-slate-700 py-1 text-center">
               {sabor.title} <br /> {sabor.subtitle}
             </p>
           </SwiperSlide>

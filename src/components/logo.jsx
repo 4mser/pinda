@@ -9,18 +9,9 @@ const Logo = () => {
   return (
     <Link href={"/"}>
       <Image
-        src={"/images/pinda-logo.png"}
-        width={90}
+        src={"/svg/pinda_logo.svg"}
+        width={80}
         height={20}
-        className={` ${
-          pathname === "/tragos"
-            ? "-hue-rotate-[170deg] saturate-150 brightness-150"
-            : ""
-        } ${
-          pathname === "/carta"
-            ? "hue-rotate-[63deg] brightness-[2] saturate-[3]"
-            : ""
-        }`}
       />
     </Link>
   );
