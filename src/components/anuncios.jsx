@@ -66,12 +66,12 @@ export default function Anuncios() {
                 height={130}
                 className="absolute  left-1/3 -translate-x-1/3 z-30"
               />
-              <div className="h-48 overflow-hidden rounded-md w-full bottom-0 mt-12">
+              <div className="h-48 overflow-hidden rounded-xl w-full bottom-0 mt-12">
                 <Image 
                   src="/banners/mente_lucida/flor_mentelucida.png"
-                  alt="botella pinda mente lucida"
-                  width={120}
-                  height={120}
+                  alt="flor pinda mente lucida"
+                  width={130}
+                  height={130}
                   className="absolute left-0 -bottom-10 z-20"
                 />
                 <Image
