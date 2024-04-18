@@ -178,7 +178,8 @@ const MapaCompleto = () => {
   };
 
   return (
-    <>
+    <section className="min-w-full">
+
       <div ref={mapContainerRef} style={{ width: "100%", height: "100vh" }} />
       <button
         onClick={goToUserLocation}
@@ -193,7 +194,7 @@ const MapaCompleto = () => {
           data={modalInfo.data}
         />
       )}
-    </>
+    </section>
   );
 };
 

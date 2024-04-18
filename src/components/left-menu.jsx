@@ -66,10 +66,10 @@ const LeftMenu = ({ openMenu, handleMenu }) => {
                 </li>
               </Link>
             ))}
-            <div className="absolute bottom-20 space-y-3">
+            {/* <div className="absolute bottom-20 space-y-3">
               <p className="text-xs w-full">Powered by:</p>
               <img src="/images/entropia.png" alt="" className="w-28" />
-            </div>
+            </div> */}
           </motion.ul>
         </motion.div>
       )}

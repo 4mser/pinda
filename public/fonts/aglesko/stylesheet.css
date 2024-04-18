@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Aglesko Display';
+    src: url('Aglesko.eot');
+    src: local('Aglesko'),
+        url('Aglesko.eot?#iefix') format('embedded-opentype'),
+        url('Aglesko.woff2') format('woff2'),
+        url('Aglesko.woff') format('woff'),
+        url('Aglesko.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+

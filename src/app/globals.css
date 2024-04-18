@@ -2,27 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Aglesko Display';
+  src: url('/fonts/aglesko/Aglesko.eot');
+  src: local('Aglesko'),
+      url('/fonts/aglesko/Aglesko.eot?#iefix') format('embedded-opentype'),
+      url('/fonts/aglesko/Aglesko.woff2') format('woff2'),
+      url('/fonts/aglesko/Aglesko.woff') format('woff'),
+      url('/fonts/aglesko/Aglesko.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
 :root {
-  --cyan: #1CC8E5;
-  --dark1: #000000;
+--cyan: #1CC8E5;
+--dark1: #000000;
 }
 
 body {
-  /* background-color: #0A0A16; */
-  background-color: #ffffff;
-  color: rgb(14, 14, 14);
+/* background-color: #0A0A16; */
+background-color: #ffffff;
+color: rgb(14, 14, 14);
+font-family: 'Aglesko Display', sans-serif;
 }
 
 .animate-neon {
-  animation: neon 3s ease-in-out infinite;
+animation: neon 3s ease-in-out infinite;
 }
 
 @keyframes neon {
-  0%, 100% {
-      filter: brightness(1);
-  }
-  50% {
-      filter: brightness(2);
-  }
+0%, 100% {
+    filter: brightness(1);
 }
-
+50% {
+    filter: brightness(2);
+}
+}

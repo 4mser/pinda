@@ -10,77 +10,46 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Data for each SwiperSlide
 const sabores = [
   {
-    image: "/images/sabores/jazmin.png",
-    title: "Jazmin Melena",
-    subtitle: "de León",
+    image: "/images/pindas/pinda_natural.png",
+    title: "Natural",
+    subtitle: "",
   },
   {
-    image: "/images/sabores/arandano.png",
+    image: "/images/pindas/pinda_arandano_lavanda.png",
     title: "Arándano",
     subtitle: "Lavanda",
   },
   {
-    image: "/images/sabores/durazno.png",
-    title: "Durazno",
-    subtitle: "Poleo",
-  },
-  {
-    image: "/images/sabores/mango.png",
+    image: "/images/pindas/pinda_mango_jengibre.png",
     title: "Mango",
     subtitle: "Jengibre",
   },
   {
-    image: "/images/sabores/frambuesa.png",
-    title: "Frambuesa",
-    subtitle: "Limón Menta",
-  },
-  {
-    image: "/images/sabores/piña.png",
-    title: "Piña",
-    subtitle: "Albahaca",
-  },
-  {
-    image: "/images/sabores/mandarina.png",
-    title: "Mandarina",
-    subtitle: "Maracuyá",
-  },
-  {
-    image: "/images/sabores/manzana.png",
-    title: "Manzana",
-    subtitle: "Chai",
-  },
-  {
-    image: "/images/sabores/maqui.png",
+    image: "/images/pindas/pinda_maqui_cacao.png",
     title: "Maqui",
     subtitle: "Cacao",
   },
   {
-    image: "/images/sabores/murta.png",
-    title: "Murta",
-    subtitle: "Membrillo",
-  },
-
-  {
-    image: "/images/sabores/natural.png",
-    title: "Natural",
-    subtitle: "",
-  },
+    image: "/images/pindas/pinda_pina_albahaca.png",
+    title: "Piña",
+    subtitle: "Albahaca",
+  }
 ];
 
 export default function Sabores() {
   return (
     <main className="pt-3 left-0 w-full px-4">
-      <p className="py-2 font-medium text-slate-700">Sabores</p>
+      <p className="py-2 font-medium text-slate-700">Sabores de siempre</p>
       <Swiper
         spaceBetween={12}
-        slidesPerView={5.3}
+        slidesPerView={4.3}
         centeredSlides={false}
         pagination={{ clickable: true }}
         navigation={false}
       >
         {sabores.map((sabor, index) => (
           <SwiperSlide key={index}>
-            <div className="overflow-hidden rounded-full shadow-md ">
+            <div className="overflow-hidden">
               <img
                 src={sabor.image}
                 alt={sabor.title}

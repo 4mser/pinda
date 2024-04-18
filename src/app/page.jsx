@@ -8,14 +8,16 @@ import Topbar from "@/components/topbar";
 
 export default function Home() {
   return (
-    <main>
-      {/* <Topbar /> */}
-      {/* <Banner /> */}
-      <Anuncios />
-      <Sabores />
-      <Contacto />
-      <Mapa />
-      {/* <Navbar /> */}
+    <main className="flex flex-col items-center">
+      <section className="max-w-xl border-l border-r min-h-[100dvh]">
+        {/* <Topbar /> */}
+        {/* <Banner /> */}
+        <Anuncios />
+        <Sabores />
+        <Contacto />
+        <Mapa />
+        {/* <Navbar /> */}
+      </section>
     </main>
   );
 }

@@ -36,8 +36,8 @@ export default function Anuncios() {
                 alt=""
                 className="w-full h-full object-cover"
               />
-              <p className="rounded-xl px-2 py-1 bg-slate-900 absolute right-7 top-4 text-white text-[10px] font-medium">
-                NUEVA LINEA FUNCIONAL
+              <p className="rounded-xl hover:scale-110 transition-all flex items-center gap-2 px-2 py-1 bg-slate-900 absolute right-7 top-4 text-white text-[10px] font-medium">
+                <div className="w-1.5 h-1.5 rounded-full bg-white" />   NUEVA LINEA FUNCIONAL
               </p>
               <p className="absolute right-8 top-[50px] text-right text-[14px] font-[500]">
                 Potencia tu equilibrio <br />y activa tu claridad

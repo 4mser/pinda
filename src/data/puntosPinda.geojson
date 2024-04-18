@@ -4,10 +4,10 @@
       {
         "type": "Feature",
         "properties": {
-          "location": "EMPORIO GRANEL TEMUCO",
-          "boro_name": "TEMUCO",
-          "street": "AVDA MARTIN LUTERO 02184",
-          "neighborhood": "TEMUCO"
+          "local": "EMPORIO GRANEL TEMUCO",
+          "ciudad": "TEMUCO",
+          "calle": "AVDA MARTIN LUTERO 02184",
+          "sector": "TEMUCO"
         },
         "geometry": {
           "type": "Point",
@@ -17,10 +17,10 @@
       {
         "type": "Feature",
         "properties": {
-          "location": "AVL PASTELERIA",
-          "boro_name": "SAN JOSE",
-          "street": "CALLE MARIQUINA 106",
-          "neighborhood": "SAN JOSE"
+          "local": "AVL PASTELERIA",
+          "ciudad": "SAN JOSE",
+          "calle": "CALLE MARIQUINA 106",
+          "sector": "SAN JOSE"
         },
         "geometry": {
           "type": "Point",
@@ -30,10 +30,10 @@
       {
         "type": "Feature",
         "properties": {
-          "location": "BOTILLERIA PUNTO CLAVE",
-          "boro_name": "SAN JOSE",
-          "street": "CALLE MARIQUINA 1620",
-          "neighborhood": "SAN JOSE"
+          "local": "BOTILLERIA PUNTO CLAVE",
+          "ciudad": "SAN JOSE",
+          "calle": "CALLE MARIQUINA 1620",
+          "sector": "SAN JOSE"
         },
         "geometry": {
           "type": "Point",
@@ -43,10 +43,10 @@
       {
         "type": "Feature",
         "properties": {
-          "location": "CERVECERIA PANCUL",
-          "boro_name": "SAN JOSE",
-          "street": "km 828 ruta 5 sur lo lagos 5170000",
-          "neighborhood": "SAN JOSE"
+          "local": "CERVECERIA PANCUL",
+          "ciudad": "SAN JOSE",
+          "calle": "km 828 ruta 5 sur lo lagos 5170000",
+          "sector": "SAN JOSE"
         },
         "geometry": {
           "type": "Point",
@@ -56,10 +56,10 @@
       {
         "type": "Feature",
         "properties": {
-          "location": "ELFO DEL BOSQUE",
-          "boro_name": "VALDIVIA",
-          "street": "INFANTA ELENA 3590",
-          "neighborhood": "VALDIVIA"
+          "local": "ELFO DEL BOSQUE",
+          "ciudad": "VALDIVIA",
+          "calle": "INFANTA ELENA 3590",
+          "sector": "VALDIVIA"
         },
         "geometry": {
           "type": "Point",
@@ -69,10 +69,10 @@
       {
         "type": "Feature",
         "properties": {
-          "location": "CAFE LA PIEDRA",
-          "boro_name": "VALDIVIA",
-          "street": "AV RAMON PICARTE 811",
-          "neighborhood": "VALDIVIA"
+          "local": "CAFE LA PIEDRA",
+          "ciudad": "VALDIVIA",
+          "calle": "AV RAMON PICARTE 811",
+          "sector": "VALDIVIA"
         },
         "geometry": {
           "type": "Point",
@@ -82,10 +82,10 @@
       {
         "type": "Feature",
         "properties": {
-          "location": "NATURAL IC",
-          "boro_name": "VALDIVIA",
-          "street": "AV ITALIA 1721",
-          "neighborhood": "VALDIVIA"
+          "local": "NATURAL IC",
+          "ciudad": "VALDIVIA",
+          "calle": "AV ITALIA 1721",
+          "sector": "VALDIVIA"
         },
         "geometry": {
           "type": "Point",
@@ -95,10 +95,10 @@
       {
         "type": "Feature",
         "properties": {
-          "location": "SABOR A VERDE",
-          "boro_name": "VALDIVIA",
-          "street": "CAMILO HENRIQUEZ 822 824",
-          "neighborhood": "VALDIVIA"
+          "local": "SABOR A VERDE",
+          "ciudad": "VALDIVIA",
+          "calle": "CAMILO HENRIQUEZ 822 824",
+          "sector": "VALDIVIA"
         },
         "geometry": {
           "type": "Point",
@@ -108,10 +108,10 @@
       {
         "type": "Feature",
         "properties": {
-          "location": "HUAIRAVO",
-          "boro_name": "VALDIVIA",
-          "street": "VELASQUEZ COBARRUBIAS 260",
-          "neighborhood": "NIEBLA"
+          "local": "HUAIRAVO",
+          "ciudad": "VALDIVIA",
+          "calle": "VELASQUEZ COBARRUBIAS 260",
+          "sector": "NIEBLA"
         },
         "geometry": {
           "type": "Point",
@@ -121,10 +121,10 @@
       {
         "type": "Feature",
         "properties": {
-          "location": "EX FABRICA",
-          "boro_name": "VALDIVIA",
-          "street": "Guillermo Frick 270",
-          "neighborhood": "VALDIVIA"
+          "local": "EX FABRICA",
+          "ciudad": "VALDIVIA",
+          "calle": "Guillermo Frick 270",
+          "sector": "VALDIVIA"
         },
         "geometry": {
           "type": "Point",
@@ -134,10 +134,10 @@
       {
         "type": "Feature",
         "properties": {
-          "location": "MERCADO LOCAL",
-          "boro_name": "VILLARRICA",
-          "street": "CAM 2DA FAJA LT 6 LONCOTRARO ALTO",
-          "neighborhood": "VILLARRICA"
+          "local": "MERCADO LOCAL",
+          "ciudad": "VILLARRICA",
+          "calle": "CAM 2DA FAJA LT 6 LONCOTRARO ALTO",
+          "sector": "VILLARRICA"
         },
         "geometry": {
           "type": "Point",
@@ -147,10 +147,10 @@
       {
         "type": "Feature",
         "properties": {
-          "location": "LA COLMENA NIEBLA",
-          "boro_name": "VALDIVIA",
-          "street": "DEL CASTILLO 1125",
-          "neighborhood": "NIEBLA"
+          "local": "LA COLMENA NIEBLA",
+          "ciudad": "VALDIVIA",
+          "calle": "DEL CASTILLO 1125",
+          "sector": "NIEBLA"
         },
         "geometry": {
           "type": "Point",
@@ -160,10 +160,10 @@
       {
         "type": "Feature",
         "properties": {
-          "location": "APRENDIZ PANADERIA",
-          "boro_name": "VALDIVIA",
-          "street": "ANIBAL PINTO 1965",
-          "neighborhood": "VALDIVIA"
+          "local": "APRENDIZ PANADERIA",
+          "ciudad": "VALDIVIA",
+          "calle": "ANIBAL PINTO 1965",
+          "sector": "VALDIVIA"
         },
         "geometry": {
           "type": "Point",
@@ -173,10 +173,10 @@
       {
         "type": "Feature",
         "properties": {
-          "location": "LA COSTANERA MAFIL",
-          "boro_name": "MAFIL",
-          "street": "CAROL URZUA 270",
-          "neighborhood": "MAFIL"
+          "local": "LA COSTANERA MAFIL",
+          "ciudad": "MAFIL",
+          "calle": "CAROL URZUA 270",
+          "sector": "MAFIL"
         },
         "geometry": {
           "type": "Point",
@@ -186,10 +186,10 @@
       {
         "type": "Feature",
         "properties": {
-          "location": "450",
-          "boro_name": "VALDIVIA",
-          "street": "LOS ALERCES 20",
-          "neighborhood": "ISLA TEJA"
+          "local": "450",
+          "ciudad": "VALDIVIA",
+          "calle": "LOS ALERCES 20",
+          "sector": "ISLA TEJA"
         },
         "geometry": {
           "type": "Point",
@@ -199,10 +199,10 @@
       {
         "type": "Feature",
         "properties": {
-          "location": "PANAKA CAFE",
-          "boro_name": "VALDIVIA",
-          "street": "LOS LAURELES 212",
-          "neighborhood": "ISLA TEJA"
+          "local": "PANAKA CAFE",
+          "ciudad": "VALDIVIA",
+          "calle": "LOS LAURELES 212",
+          "sector": "ISLA TEJA"
         },
         "geometry": {
           "type": "Point",
@@ -212,10 +212,10 @@
       {
         "type": "Feature",
         "properties": {
-          "location": "MIA BAR",
-          "boro_name": "VALDIVIA",
-          "street": "LOS ROBLES 075",
-          "neighborhood": "ISLA TEJA"
+          "local": "MIA BAR",
+          "ciudad": "VALDIVIA",
+          "calle": "LOS ROBLES 075",
+          "sector": "ISLA TEJA"
         },
         "geometry": {
           "type": "Point",
@@ -225,10 +225,10 @@
       {
         "type": "Feature",
         "properties": {
-          "location": "BAR BUNDOR",
-          "boro_name": "VALDIVIA",
-          "street": "KM 25 NORTE,CAYUMAPU",
-          "neighborhood": "VALDIVIA"
+          "local": "BAR BUNDOR",
+          "ciudad": "VALDIVIA",
+          "calle": "KM 25 NORTE,CAYUMAPU",
+          "sector": "VALDIVIA"
         },
         "geometry": {
           "type": "Point",
@@ -238,10 +238,10 @@
       {
         "type": "Feature",
         "properties": {
-          "location": "LA ROTONDA LIQUOR STORE",
-          "boro_name": "VALDIVIA",
-          "street": "LOS ROBLES 500",
-          "neighborhood": "ISLA TEJA"
+          "local": "LA ROTONDA LIQUOR STORE",
+          "ciudad": "VALDIVIA",
+          "calle": "LOS ROBLES 500",
+          "sector": "ISLA TEJA"
         },
         "geometry": {
           "type": "Point",
@@ -251,10 +251,10 @@
       {
         "type": "Feature",
         "properties": {
-          "location": "BOTILLERIA EL TORREON",
-          "boro_name": "VALDIVIA",
-          "street": "COCHRANE 215",
-          "neighborhood": "VALDIVIA"
+          "local": "BOTILLERIA EL TORREON",
+          "ciudad": "VALDIVIA",
+          "calle": "COCHRANE 215",
+          "sector": "VALDIVIA"
         },
         "geometry": {
           "type": "Point",
@@ -264,10 +264,10 @@
       {
         "type": "Feature",
         "properties": {
-          "location": "CAFE BOGADOR",
-          "boro_name": "VALDIVIA",
-          "street": "GENERAL LAGOS 1089",
-          "neighborhood": "VALDIVIA"
+          "local": "CAFE BOGADOR",
+          "ciudad": "VALDIVIA",
+          "calle": "GENERAL LAGOS 1089",
+          "sector": "VALDIVIA"
         },
         "geometry": {
           "type": "Point",
@@ -277,10 +277,10 @@
       {
         "type": "Feature",
         "properties": {
-          "location": "ENKI VEGAN",
-          "boro_name": "VALDIVIA",
-          "street": "O'HIGGINS 374",
-          "neighborhood": "VALDIVIA"
+          "local": "ENKI VEGAN",
+          "ciudad": "VALDIVIA",
+          "calle": "O'HIGGINS 374",
+          "sector": "VALDIVIA"
         },
         "geometry": {
           "type": "Point",
@@ -290,10 +290,10 @@
       {
         "type": "Feature",
         "properties": {
-          "location": "BOTILLERIA C Y C",
-          "boro_name": "VALDIVIA",
-          "street": "HOLZAPFEL 582",
-          "neighborhood": "VALDIVIA"
+          "local": "BOTILLERIA C Y C",
+          "ciudad": "VALDIVIA",
+          "calle": "HOLZAPFEL 582",
+          "sector": "VALDIVIA"
         },
         "geometry": {
           "type": "Point",
@@ -303,10 +303,10 @@
       {
         "type": "Feature",
         "properties": {
-          "location": "CAFE DIAS LIBRES",
-          "boro_name": "CHOSHUENCO",
-          "street": "INDEPENDENCIA #4",
-          "neighborhood": "CHOSHUENCO"
+          "local": "CAFE DIAS LIBRES",
+          "ciudad": "CHOSHUENCO",
+          "calle": "INDEPENDENCIA #4",
+          "sector": "CHOSHUENCO"
         },
         "geometry": {
           "type": "Point",
@@ -316,10 +316,10 @@
       {
         "type": "Feature",
         "properties": {
-          "location": "DEL CERRO VEGAN",
-          "boro_name": "VALDIVIA",
-          "street": "GARCIA REYES 464",
-          "neighborhood": "VALDIVIA"
+          "local": "DEL CERRO VEGAN",
+          "ciudad": "VALDIVIA",
+          "calle": "GARCIA REYES 464",
+          "sector": "VALDIVIA"
         },
         "geometry": {
           "type": "Point",
@@ -329,10 +329,10 @@
       {
         "type": "Feature",
         "properties": {
-          "location": "SATIVO",
-          "boro_name": "PUERTO VARAS",
-          "street": "AV LOS COLONOS 1176 LOCAL 8",
-          "neighborhood": "PUERTO VARAS"
+          "local": "SATIVO",
+          "ciudad": "PUERTO VARAS",
+          "calle": "AV LOS COLONOS 1176 LOCAL 8",
+          "sector": "PUERTO VARAS"
         },
         "geometry": {
           "type": "Point",
@@ -342,10 +342,10 @@
       {
         "type": "Feature",
         "properties": {
-          "location": "SABROSURA",
-          "boro_name": "VALDIVIA",
-          "street": "AINIL 535",
-          "neighborhood": "ISLA TEJA"
+          "local": "SABROSURA",
+          "ciudad": "VALDIVIA",
+          "calle": "AINIL 535",
+          "sector": "ISLA TEJA"
         },
         "geometry": {
           "type": "Point",
@@ -355,10 +355,10 @@
       {
         "type": "Feature",
         "properties": {
-          "location": "BARBUDO GROWLER",
-          "boro_name": "VALDIVIA",
-          "street": "BEAUCHEF 641",
-          "neighborhood": "VALDIVIA"
+          "local": "BARBUDO GROWLER",
+          "ciudad": "VALDIVIA",
+          "calle": "BEAUCHEF 641",
+          "sector": "VALDIVIA"
         },
         "geometry": {
           "type": "Point",
@@ -368,10 +368,10 @@
       {
         "type": "Feature",
         "properties": {
-          "location": "MIGAS DEL CHUCAO",
-          "boro_name": "VALDIVIA",
-          "street": "CAUPOLICAN 270",
-          "neighborhood": "VALDIVIA"
+          "local": "MIGAS DEL CHUCAO",
+          "ciudad": "VALDIVIA",
+          "calle": "CAUPOLICAN 270",
+          "sector": "VALDIVIA"
         },
         "geometry": {
           "type": "Point",
@@ -381,10 +381,10 @@
       {
         "type": "Feature",
         "properties": {
-          "location": "CASA DEL QUESO",
-          "boro_name": "VALDIVIA",
-          "street": "KM 25 NORTE,CAYUMAPU",
-          "neighborhood": "VALDIVIA"
+          "local": "CASA DEL QUESO",
+          "ciudad": "VALDIVIA",
+          "calle": "KM 25 NORTE,CAYUMAPU",
+          "sector": "VALDIVIA"
         },
         "geometry": {
           "type": "Point",
@@ -394,10 +394,10 @@
       {
         "type": "Feature",
         "properties": {
-          "location": "SILOS TOROBAYO",
-          "boro_name": "VALDIVIA",
-          "street": "RUTA T 350 1999 SILOS DE TOROBAYO",
-          "neighborhood": "ISLA TEJA"
+          "local": "SILOS TOROBAYO",
+          "ciudad": "VALDIVIA",
+          "calle": "RUTA T 350 1999 SILOS DE TOROBAYO",
+          "sector": "ISLA TEJA"
         },
         "geometry": {
           "type": "Point",
@@ -407,10 +407,10 @@
       {
         "type": "Feature",
         "properties": {
-          "location": "PANAKA CAFE 2",
-          "boro_name": "VALDIVIA",
-          "street": "CAUPOLICAN 110",
-          "neighborhood": "VALDIVIA"
+          "local": "PANAKA CAFE 2",
+          "ciudad": "VALDIVIA",
+          "calle": "CAUPOLICAN 110",
+          "sector": "VALDIVIA"
         },
         "geometry": {
           "type": "Point",

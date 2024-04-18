@@ -17,7 +17,8 @@ const Topbar = () => {
   };
 
   return (
-    <>
+    <section className="w-full">
+
       <div className="fixed z-50 w-full top-0 left-0 bg-white flex justify-between px-4 py-2 items-center border-b border-black/10">
         <button onClick={handleMenu}>
           <Image
@@ -36,7 +37,7 @@ const Topbar = () => {
       <LeftMenu openMenu={openMenu} handleMenu={handleMenu} />
 
       <HappyHour openHappy={openHappy} handleHappy={handleHappy} />
-    </>
+    </section>
   );
 };
 
