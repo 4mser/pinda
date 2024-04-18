@@ -67,7 +67,7 @@ animation: neon 3s ease-in-out infinite;
     flex-direction: row;
     position: relative;
     width: max-content;
-    gap: 1rem;
+    gap: 0rem;
   }
   
   
@@ -77,8 +77,8 @@ animation: neon 3s ease-in-out infinite;
   .logos-slide {
     flex-wrap: nowrap;
     display: flex ;
-    gap: 5rem;
-    padding: 2rem;
+    gap: 3rem;
+    padding: 1rem;
     animation: 25s slide infinite linear;
   
   }

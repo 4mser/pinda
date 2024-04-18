@@ -29,14 +29,14 @@ const generateCategoriaElements = (categorias) => {
       key={index}
       className={` flex items-center`}
     >
-        <img src={`/banners/propiedades/${categoria.icono}`} alt=""  />
+        <img src={`/banners/propiedades/${categoria.icono}`} alt=""  className="w-20 h-20" />
     </div>
   ));
 };
 
 const AutoScroll = () => {
   return (
-    <section className=" w-full overflow-hidden bg-yellow-200 mt-8">
+    <section className=" w-full overflow-hidden bg-yellow-200 mt-8 ">
       <div className="logos">
         <div className="logos-slide">
           {generateCategoriaElements(CategoriasData)}
