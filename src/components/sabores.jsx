@@ -38,7 +38,7 @@ const sabores = [
     image: "/images/pindas/pinda_frambuesa_limon_menta.png",
     title: "Frambuesa",
     subtitle: "Limón Menta",
-  }
+  },
 ];
 
 export default function Sabores() {
@@ -66,7 +66,6 @@ export default function Sabores() {
             </p>
           </SwiperSlide>
         ))}
-        <div clas></div>
       </Swiper>
     </main>
   );

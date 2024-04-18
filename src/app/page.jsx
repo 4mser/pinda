@@ -5,6 +5,7 @@ import Contacto from "@/components/contacto";
 import Mapa from "@/components/mapa";
 import Navbar from "@/components/navbar";
 import Topbar from "@/components/topbar";
+import Catalogo from "@/components/catalogo";
 
 export default function Home() {
   return (
@@ -14,8 +15,9 @@ export default function Home() {
         <Anuncios />
         <Sabores />
         {/* <Contacto /> */}
-        <Mapa />
         {/* <Navbar /> */}
+        <Mapa />
+        <Catalogo />
     </main>
   );
 }
