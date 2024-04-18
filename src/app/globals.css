@@ -41,3 +41,46 @@ animation: neon 3s ease-in-out infinite;
     filter: brightness(2);
 }
 }
+
+/*  Carousel infinito */
+
+@keyframes slide {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  
+  @keyframes slide2 {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0%);
+    }
+  }
+  
+  .logos {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: max-content;
+    gap: 1rem;
+  }
+  
+  
+  
+  
+  
+  .logos-slide {
+    flex-wrap: nowrap;
+    display: flex ;
+    gap: 5rem;
+    padding: 2rem;
+    animation: 25s slide infinite linear;
+  
+  }
+  
+ 

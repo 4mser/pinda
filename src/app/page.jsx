@@ -6,6 +6,7 @@ import Mapa from "@/components/mapa";
 import Navbar from "@/components/navbar";
 import Topbar from "@/components/topbar";
 import Catalogo from "@/components/catalogo";
+import AutoScroll from "@/components/propiedades";
 
 export default function Home() {
   return (
@@ -16,8 +17,9 @@ export default function Home() {
         <Sabores />
         {/* <Contacto /> */}
         {/* <Navbar /> */}
+        <AutoScroll />
         <Mapa />
-        <Catalogo />
+        {/* <Catalogo /> */}
     </main>
   );
 }
