@@ -38,8 +38,8 @@ const sabores = [
 
 export default function Sabores() {
   return (
-    <main className="pt-3 left-0 w-full px-4">
-      <p className="py-3 font-medium text-slate-700">Sabores de siempre</p>
+    <main className="pt-3 left-0 w-full ">
+      <p className="py-3 font-medium text-slate-700 px-4">Sabores de siempre</p>
       <Swiper
         spaceBetween={12}
         slidesPerView={4.5}
@@ -49,7 +49,7 @@ export default function Sabores() {
       >
         {sabores.map((sabor, index) => (
           <SwiperSlide key={index}>
-            <div className="overflow-hidden">
+            <div className="overflow-hidden px-2">
               <img
                 src={sabor.image}
                 alt={sabor.title}

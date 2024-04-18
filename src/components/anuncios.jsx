@@ -10,7 +10,7 @@ import { Autoplay } from "swiper/modules";
 
 export default function Anuncios() {
   return (
-    <main className="pt-[85px] left-0 w-full overflow-hidden ">
+    <main className="pt-[70px] left-0 w-full overflow-hidden ">
       <Swiper
         spaceBetween={0}
         slidesPerView={1}
