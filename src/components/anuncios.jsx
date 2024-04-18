@@ -70,8 +70,8 @@ export default function Anuncios() {
                 <Image 
                   src="/banners/mente_lucida/flor_mentelucida.png"
                   alt="flor pinda mente lucida"
-                  width={130}
-                  height={130}
+                  width={140}
+                  height={140}
                   className="absolute left-0 -bottom-10 z-20"
                 />
                 <Image

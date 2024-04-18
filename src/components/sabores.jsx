@@ -33,6 +33,11 @@ const sabores = [
     image: "/images/pindas/pinda_pina_albahaca.png",
     title: "Piña",
     subtitle: "Albahaca",
+  },
+  {
+    image: "/images/pindas/pinda_frambuesa_limon_menta.png",
+    title: "Frambuesa",
+    subtitle: "Limón Menta",
   }
 ];
 
@@ -53,7 +58,7 @@ export default function Sabores() {
               <img
                 src={sabor.image}
                 alt={sabor.title}
-                className="w-full h-full object-cover rounded-md filter drop-shadow-md"
+                className="w-full h-full object-cover rounded-md filter drop-shadow-sm"
               />
             </div>
             <p className="text-[12px] font-normal text-slate-700 py-1 text-center">
