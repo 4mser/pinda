@@ -13,7 +13,7 @@ export default function Home() {
         {/* <Banner /> */}
         <Anuncios />
         <Sabores />
-        <Contacto />
+        {/* <Contacto /> */}
         <Mapa />
         {/* <Navbar /> */}
     </main>
