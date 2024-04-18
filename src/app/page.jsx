@@ -8,8 +8,7 @@ import Topbar from "@/components/topbar";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center">
-      <section className="max-w-xl border-l border-r min-h-[100dvh]">
+    <main>
         {/* <Topbar /> */}
         {/* <Banner /> */}
         <Anuncios />
@@ -17,7 +16,6 @@ export default function Home() {
         <Contacto />
         <Mapa />
         {/* <Navbar /> */}
-      </section>
     </main>
   );
 }

@@ -42,7 +42,7 @@ export default function Sabores() {
       <p className="py-2 font-medium text-slate-700">Sabores de siempre</p>
       <Swiper
         spaceBetween={12}
-        slidesPerView={4.3}
+        slidesPerView={5}
         centeredSlides={false}
         pagination={{ clickable: true }}
         navigation={false}
