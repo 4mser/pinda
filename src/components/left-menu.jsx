@@ -25,21 +25,36 @@ const backdropVariants = {
 
 const menuVariants = {
   open: {
-    opacity: 1,
-    x: 0,
     transition: {
-      type: "tween",
-      duration: 0.3,
+      type: "",
     },
   },
   closed: {
-    opacity: 0,
-    x: "-100%",
     transition: {
-      type: "tween",
-      duration: 0.3,
+      type: "",
     },
   },
+};
+
+const listItemVariants = {
+  open: (i) => ({
+    opacity: 1,
+    x:0,
+    transition: {
+      type:"spring",
+      delay: i * 0.1,
+      duration: 1
+    }
+  }),
+  closed:  (i) => ({
+    opacity: 0,
+    x:"100%",
+    transition: {
+      type:"spring",
+      delay: i * 0.1,
+      duration: 1
+    }
+  }),
 };
 
 const LeftMenu = ({ openMenu, handleMenu }) => {
@@ -47,7 +62,7 @@ const LeftMenu = ({ openMenu, handleMenu }) => {
     <AnimatePresence>
       {openMenu && (
         <motion.div
-          className="fixed z-50 left-0 top-0 w-full min-h-screen"
+          className="fixed z-50 left-0 top-0 w-full min-h-[100dvh]"
           variants={backdropVariants}
           initial="closed"
           animate="open"
@@ -55,7 +70,7 @@ const LeftMenu = ({ openMenu, handleMenu }) => {
           onClick={handleMenu}
         >
           <motion.ul
-            className="w-[80%] h-[100dvh] grid grid-rows-7 gap-0 shadow-2xl"
+            className="w-[80%] h-[100dvh] grid grid-rows-7 gap-0 "
             variants={menuVariants}
             initial="closed"
             animate="open"
@@ -63,10 +78,17 @@ const LeftMenu = ({ openMenu, handleMenu }) => {
           >
             {menuItems.map((item, index) => (
               <Link href={item.href || "#"} key={index}>
-                <li className={`flex items-center overflow-scroll gap-3 cursor-pointer h-full p-4 ${item.color}`}>
+                <motion.li 
+                  className={`flex items-center overflow-scroll gap-3 cursor-pointer h-full p-4 ${item.color}`}
+                  variants={listItemVariants}
+                  custom={index}
+                  initial="closed"
+                  animate="open"
+                  exit="closed"
+                >
                   <img src={item.icon} alt={item.text} className="w-[6vw]" />
                   <p className="text-slate-700 text-[5vw]">{item.text}</p>
-                </li>
+                </motion.li>
               </Link>
             ))}
           </motion.ul>
