@@ -23,18 +23,7 @@ const backdropVariants = {
   },
 };
 
-const menuVariants = {
-  open: {
-    transition: {
-      type: "",
-    },
-  },
-  closed: {
-    transition: {
-      type: "",
-    },
-  },
-};
+
 
 const listItemVariants = {
   open: (i) => ({
@@ -42,8 +31,8 @@ const listItemVariants = {
     x:0,
     transition: {
       type:"spring",
-      delay: i * 0.1,
-      duration: 1
+      delay: i * 0.05,
+      duration: 0.7
     }
   }),
   closed:  (i) => ({
@@ -51,8 +40,8 @@ const listItemVariants = {
     x:"100%",
     transition: {
       type:"spring",
-      delay: i * 0.1,
-      duration: 1
+      delay: i * 0.03,
+      duration: 1.5
     }
   }),
 };
@@ -71,10 +60,6 @@ const LeftMenu = ({ openMenu, handleMenu }) => {
         >
           <motion.ul
             className="w-[80%] h-[100dvh] grid grid-rows-7 gap-0 "
-            variants={menuVariants}
-            initial="closed"
-            animate="open"
-            exit="closed"
           >
             {menuItems.map((item, index) => (
               <Link href={item.href || "#"} key={index}>
