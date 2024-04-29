@@ -11,7 +11,7 @@ import Image from "next/image";
 
 export default function Anuncios() {
   return (
-    <main className="mt-[60px] left-0 w-full overflow-hidden">
+    <main className="mt-28 left-0 w-full overflow-hidden">
       <Swiper
         spaceBetween={0}
         slidesPerView={1}
@@ -29,31 +29,6 @@ export default function Anuncios() {
         modules={[Autoplay]}
         className="mySwiper"
       >
-        {/* <SwiperSlide className="px-4 ">
-          <Link href={"/carta"}>
-            <div className="h-44 rounded-lg    bg-gradient-to-br flex items-center from-zinc-800 to-transparent ">
-              <img
-                src="/banners/mente_lucida/fondo_banner_mentelucida.png"
-                alt=""
-                className="w-full h-full object-cover"
-              />
-              <img src="/banners/mente_lucida/flor_mentelucida.png" alt="flor_mentelucida" className="absolute left-0 max-w-25 opacity-50" />
-              <img src="/banners/mente_lucida/mentelucida_ladeada.png" alt="" className="absolute h-56" />
-
-              <p className="rounded-xl hover:scale-110 transition-all flex items-center gap-2 px-2 py-1 bg-slate-900 absolute right-7 top-4 text-white text-[10px] font-medium">
-                <div className="w-1.5 h-1.5 rounded-full bg-white" />   NUEVA LINEA FUNCIONAL
-              </p>
-              <p className="absolute right-8 top-[50px] text-right text-[14px] font-[500]">
-                Potencia tu equilibrio <br />y activa tu claridad
-              </p>
-              <p className="absolute right-8 top-[100px] text-right text-[10px] font-normal">
-                Fusionamos la fermentación ancestral <br /> con potentes
-                extractos fúngicos y <br /> botánicos, creando una súper bebida
-                <br /> diseñada para maximizar tu bienestar.
-              </p>
-            </div>
-          </Link>
-        </SwiperSlide> */}
 
 
         <SwiperSlide className="px-4 ">

@@ -10,7 +10,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 export default function App() {
   return (
-    <main className="left-0 w-full overflow-hidden">
+    <main className="fixed top-0 left-0 z-20 w-full overflow-hidden">
       <Swiper
         spaceBetween={0}
         centeredSlides={true}

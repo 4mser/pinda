@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Logo from "./logo";
 import HappyHour from "./happy-hour";
 import LeftMenu from "./left-menu";
@@ -16,28 +16,10 @@ const Topbar = () => {
     setOpenHappy(!openHappy);
   };
 
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  // Manejo del scroll para cambiar la clase del topbar
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 0.5) {  // Ajusta este valor según necesidad
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-
-    // Agregar listener al scroll
-    window.addEventListener('scroll', handleScroll);
-
-    // Limpiar listener al desmontar componente
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
     <section className="w-full">
-      <div className={`z-50 fixed w-full ${isScrolled ? 'top-0' : 'top-12'} left-0 bg-white flex justify-between px-4 py-2 items-center border-b border-black/10 transition-top duration-300 ease-in-out`}>
+
+      <div className="z-50 fixed w-full top-12 left-0 bg-white flex justify-between px-4 py-2 items-center border-b border-black/10">
         <button onClick={handleMenu}>
           <Image
             src={"/icons/menu3.svg"}
