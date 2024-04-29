@@ -22,10 +22,10 @@ const Topbar = () => {
       <div className="z-50 w-full top-0 left-0 bg-white flex justify-between px-4 py-2 items-center border-b border-black/10">
         <button onClick={handleMenu}>
           <Image
-            src={"/icons/menu.svg"}
+            src={"/icons/menu3.svg"}
             width={28}
-            height={28}
-            className="filter invert"
+            height={20}
+            className=""
           />
         </button>
         <Logo />
