@@ -1,7 +1,46 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
 const Tienda = () => {
+    const productos = [
+        {
+            nombre: "Natural",
+            precio: "1.990",
+            imagen: "/images/pindas/pinda_natural.png",
+            bg:"bg-orange-100"
+        },
+        {
+            nombre: "Arándano Lavanda",
+            precio: "1.990",
+            imagen: "/images/pindas/pinda_arandano_lavanda.png",
+            bg:"bg-blue-100"
+        },
+        {
+            nombre: "Mango Jengibre",
+            precio: "1.990",
+            imagen: "/images/pindas/pinda_mango_jengibre.png",
+            bg:"bg-yellow-100"
+        },
+        {
+            nombre: "Maqui Cacao",
+            precio: "1.990",
+            imagen: "/images/pindas/pinda_maqui_cacao.png",
+            bg:"bg-purple-100"
+        },
+        {
+            nombre: "Piña Albahaca",
+            precio: "1.990",
+            imagen: "/images/pindas/pinda_pina_albahaca.png",
+            bg:"bg-green-100"
+        },
+        {
+            nombre: "Frambuesa Limón Mente",
+            precio: "1.990",
+            imagen: "/images/pindas/pinda_frambuesa_limon_menta.png",
+            bg:"bg-pink-100"
+        }
+    ]
   return (
     <main className="px-4">
       <div className="w-full flex justify-between py-2 items-center">
@@ -12,7 +51,26 @@ const Tienda = () => {
           </p>
         </Link>
       </div>
-
+        <section className='grid grid-cols-2 gap-3 md:grid-cols-3'>
+            {productos.map((producto, index) => (
+                <div key={index} className={`${producto.bg} rounded-xl p-2 flex justify-between items-center flex-col`}>
+                    <Image 
+                        src={producto.imagen}
+                        alt={`Pinda ${producto.nombre}`}
+                        width={100}
+                        height={100}
+                    />
+                    <div className='w-full p-2'>
+                        <h2 className='text-[13px] text-slate-700'>
+                            {producto.nombre}
+                        </h2>
+                        <p className='font-bold text-xl text-slate-800'>
+                            ${producto.precio}
+                        </p>
+                    </div>
+                </div>
+            ))}
+        </section>
     </main>
   )
 }
