@@ -29,9 +29,14 @@ const Topbar = () => {
           />
         </button>
         <Logo />
-        <button onClick={handleHappy}>
-          <Image src={"/svg/colibri_chico.svg"} width={25} height={25} className="" />
-        </button>
+        <div className="flex flex-row gap-5">
+          <button>
+            <Image src={"/svg/bag.svg"} width={30} height={30} className="" />
+          </button>
+          <button onClick={handleHappy}>
+            <Image src={"/svg/colibri_chico.svg"} width={25} height={25} className="" />
+          </button>
+        </div>
       </div>
 
       <LeftMenu openMenu={openMenu} handleMenu={handleMenu} />

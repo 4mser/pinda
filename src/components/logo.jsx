@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const Logo = () => {
   return (
-    <Link href={"/"}>
+    <Link href={"/"} className="absolute left-1/2 -translate-x-1/2">
       <Image
         src={"/svg/pinda_logo.svg"}
         width={80}
