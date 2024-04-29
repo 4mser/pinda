@@ -29,7 +29,7 @@ export default function App() {
         <SwiperSlide>
           <Link href={"/tragos"}>
             <div className="h-12 w-full bg-gradient-to-r from-cyan-500 to-purple-500 flex justify-center gap-2 px-4 py-2 items-center border-b text-white font-sans font-light text-[12px]">
-              <p>DESPACHOS DESDE LA REGIÓN METROPOLITANA HASTA LA X REGIÓN</p>
+              <p>DESPACHOS DESDE LA RM HASTA LA X REGIÓN</p>
               {/* <img src="/icons/cocktail-glass.svg" alt="" className="w-6" /> */}
             </div>
           </Link>
