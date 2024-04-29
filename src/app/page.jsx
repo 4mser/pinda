@@ -20,6 +20,11 @@ export default function Home() {
         <AutoScroll />
         <Mapa />
         {/* <Catalogo /> */}
+        <section className="p-4">
+          <h2>
+            Beneficios de la Kombucha
+          </h2>
+        </section>
     </main>
   );
 }
