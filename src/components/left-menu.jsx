@@ -7,7 +7,6 @@ const LeftMenu = ({ openMenu, handleMenu }) => {
     open: {
       opacity: 1,
       x: 0,
-      backdropFilter: "blur(10px)",
       transition: {
         type: "tween",
         duration: 0.3,
@@ -17,7 +16,6 @@ const LeftMenu = ({ openMenu, handleMenu }) => {
     closed: {
       opacity: 0,
       x: "-100%",
-      backdropFilter: "blur(0px)",
       transition: {
         type: "tween",
         duration: 0.3,
@@ -26,10 +24,6 @@ const LeftMenu = ({ openMenu, handleMenu }) => {
     },
   };
 
-  const backdropVariants = {
-    open: { opacity: 1, transition: { duration: 0.3 } },
-    closed: { opacity: 0, transition: { duration: 0.3 } },
-  };
 
   // Datos de los elementos del menú
   const menuItems = [
@@ -47,14 +41,13 @@ const LeftMenu = ({ openMenu, handleMenu }) => {
       {openMenu && (
         <motion.div
           className="fixed z-50 left-0 top-0 w-full min-h-[100dvh] bg-black/70"
-          variants={backdropVariants}
           initial="closed"
           animate="open"
           exit="closed"
           onClick={handleMenu}
         >
           <motion.ul
-            className="w-[80%]  h-screen grid grid-rows-7 gap-0 shadow-2xl"
+            className="w-[80%]  h-[100dvh] grid grid-rows-7 gap-0 shadow-2xl"
             variants={menuVariants}
             initial="closed"
             animate="open"
