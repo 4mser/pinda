@@ -127,6 +127,7 @@ const Tienda = () => {
                                 alt='add'
                                 width={25}
                                 height={25}
+                                className='translate-y-1.5'
                             />
                         </div>
                     </motion.div>
