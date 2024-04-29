@@ -7,6 +7,7 @@ import Navbar from "@/components/navbar";
 import Topbar from "@/components/topbar";
 import Catalogo from "@/components/catalogo";
 import AutoScroll from "@/components/propiedades";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -21,9 +22,7 @@ export default function Home() {
         <Mapa />
         {/* <Catalogo /> */}
         <section className="p-4">
-          <h2>
-            Beneficios de la Kombucha
-          </h2>
+          <h2>Alguna wea</h2>
         </section>
     </main>
   );

@@ -11,6 +11,7 @@ const LeftMenu = ({ openMenu, handleMenu }) => {
       transition: {
         type: "tween",
         duration: 0.3,
+        
       },
     },
     closed: {
@@ -20,6 +21,7 @@ const LeftMenu = ({ openMenu, handleMenu }) => {
       transition: {
         type: "tween",
         duration: 0.3,
+        
       },
     },
   };
@@ -31,20 +33,20 @@ const LeftMenu = ({ openMenu, handleMenu }) => {
 
   // Datos de los elementos del menú
   const menuItems = [
-    { href: "/", icon: "/icons/home-diamond.svg", text: "Inicio" },
-    { href: "/mapa", icon: "/icons/pushpin.svg", text: "Puntos de venta" },
-    { icon: "/icons/dizzy.svg", text: "Historia y Beneficios" },
-    { icon: "/icons/cocktail-glass.svg", text: "Coctelería" },
-    { icon: "/icons/events.svg", text: "Eventos" },
-    { icon: "/icons/recycling.svg", text: "Reutilización y Sostenibilidad" },
-    { icon: "/icons/contact.svg", text: "Nosotros" },
+    { href: "/", icon: "/icons/home-diamond.svg", text: "Inicio", color:"bg-slate-200" },
+    { href: "/mapa", icon: "/icons/pushpin.svg", text: "Puntos de venta", color:"bg-red-200" },
+    { icon: "/icons/dizzy.svg", text: "Historia y Beneficios", color:"bg-yellow-200" },
+    { icon: "/icons/cocktail-glass.svg", text: "Coctelería", color:"bg-sky-200" },
+    { icon: "/icons/recycling.svg", text: "Reutilización y Sostenibilidad", color:"bg-green-200" },
+    { icon: "/icons/events.svg", text: "Eventos", color:"bg-purple-200" },
+    { icon: "/icons/contact.svg", text: "Nosotros", color:"bg-blue-200" },
   ];
 
   return (
     <AnimatePresence>
       {openMenu && (
         <motion.div
-          className="fixed z-50 left-0 top-0 w-full min-h-[100dvh] backdrop-blur-sm"
+          className="fixed z-50 left-0 top-0 w-full min-h-[100dvh] bg-black/70"
           variants={backdropVariants}
           initial="closed"
           animate="open"
@@ -52,7 +54,7 @@ const LeftMenu = ({ openMenu, handleMenu }) => {
           onClick={handleMenu}
         >
           <motion.ul
-            className="w-fit min-h-[100dvh] bg-gradient-to-tr from-indigo-50 to-sky-50 border-r border-indigo-300/10 p-8 pt-20 pr-14 flex flex-col gap-6"
+            className="w-[80%]  h-screen grid grid-rows-7 gap-0 shadow-2xl"
             variants={menuVariants}
             initial="closed"
             animate="open"
@@ -60,9 +62,9 @@ const LeftMenu = ({ openMenu, handleMenu }) => {
           >
             {menuItems.map((item, index) => (
               <Link href={item.href || "#"} key={index}>
-                <li className="flex items-center gap-3 cursor-pointer">
-                  <img src={item.icon} alt={item.text} />
-                  {item.text}
+                <li className={`flex items-center overflow-scroll gap-3 cursor-pointer h-full p-4  ${item.color}`}>
+                  <img src={item.icon} alt={item.text} className="w-[5vw]" />
+                  <p className="text-slate-700 text-[5vw]">{item.text}</p>
                 </li>
               </Link>
             ))}
