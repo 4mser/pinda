@@ -58,7 +58,7 @@ const LeftMenu = ({ openMenu, handleMenu }) => {
           exit="closed"
           onClick={handleMenu}
         >
-          <motion.ul
+          <ul
             className="w-[80%] h-[100dvh] grid grid-rows-7 gap-0 "
           >
             {menuItems.map((item, index) => (
@@ -76,7 +76,7 @@ const LeftMenu = ({ openMenu, handleMenu }) => {
                 </motion.li>
               </Link>
             ))}
-          </motion.ul>
+          </ul>
         </motion.div>
       )}
     </AnimatePresence>
