@@ -58,7 +58,7 @@ const LeftMenu = ({ openMenu, handleMenu }) => {
           onClick={handleMenu}
         >
           <motion.ul
-            className="w-[80%]  h-screen grid grid-rows-7 gap-0 shadow-2xl"
+            className="w-[80%]  h-[100dvh] grid grid-rows-7 gap-0 shadow-2xl"
             variants={menuVariants}
             initial="closed"
             animate="open"
