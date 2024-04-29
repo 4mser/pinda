@@ -53,20 +53,35 @@ const Tienda = () => {
       </div>
         <section className='grid grid-cols-2 gap-3 md:grid-cols-3'>
             {productos.map((producto, index) => (
-                <div key={index} className={`${producto.bg} rounded-xl p-2 flex justify-between items-center flex-col`}>
+                <div key={index} className={`${producto.bg} relative rounded-xl p-2 flex justify-between items-center flex-col`}>
                     <Image 
                         src={producto.imagen}
                         alt={`Pinda ${producto.nombre}`}
                         width={100}
                         height={100}
                     />
-                    <div className='w-full p-2'>
-                        <h2 className='text-[13px] text-slate-700'>
-                            {producto.nombre}
-                        </h2>
-                        <p className='font-bold text-xl text-slate-800'>
-                            ${producto.precio}
-                        </p>
+                    <Image 
+                            src="/svg/heart.svg"
+                            alt='heart'
+                            width={25}
+                            height={25}
+                            className='absolute right-4 top-4'
+                    />
+                    <div className='w-full p-2 flex items-center justify-between'>
+                        <div>
+                            <h2 className='text-[13px] text-slate-700'>
+                                {producto.nombre}
+                            </h2>
+                            <p className='font-bold text-xl text-slate-800'>
+                                ${producto.precio}
+                            </p>
+                        </div>
+                        <Image 
+                            src="/svg/add.svg"
+                            alt='add'
+                            width={25}
+                            height={25}
+                        />
                     </div>
                 </div>
             ))}
