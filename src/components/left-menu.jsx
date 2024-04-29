@@ -24,6 +24,16 @@ const LeftMenu = ({ openMenu, handleMenu }) => {
     },
   };
 
+  const backdropVariants = {
+    open: {
+      backgroundColor: "rgba(0, 0, 0, 0.7)", // De transparente a negro con opacidad 70%
+      transition: { duration: 0.3 }
+    },
+    closed: {
+      backgroundColor: "rgba(0, 0, 0, 0)", // De negro con opacidad 70% a transparente
+      transition: { duration: 0.3 }
+    },
+  };
 
   // Datos de los elementos del menú
   const menuItems = [
@@ -40,14 +50,15 @@ const LeftMenu = ({ openMenu, handleMenu }) => {
     <AnimatePresence>
       {openMenu && (
         <motion.div
-          className="fixed z-50 left-0 top-0 w-full min-h-[100dvh] bg-black/70"
+          className="fixed z-50 left-0 top-0 w-full min-h-[100dvh] "
+          variants={backdropVariants}
           initial="closed"
           animate="open"
           exit="closed"
           onClick={handleMenu}
         >
           <motion.ul
-            className="w-[80%]  h-[100dvh] grid grid-rows-7 gap-0 shadow-2xl"
+            className="w-[80%]  h-screen grid grid-rows-7 gap-0 shadow-2xl"
             variants={menuVariants}
             initial="closed"
             animate="open"
@@ -56,7 +67,7 @@ const LeftMenu = ({ openMenu, handleMenu }) => {
             {menuItems.map((item, index) => (
               <Link href={item.href || "#"} key={index}>
                 <li className={`flex items-center overflow-scroll gap-3 cursor-pointer h-full p-4  ${item.color}`}>
-                  <img src={item.icon} alt={item.text} className="w-[5vw]" />
+                  <img src={item.icon} alt={item.text} className="w-[6vw]" />
                   <p className="text-slate-700 text-[5vw]">{item.text}</p>
                 </li>
               </Link>
