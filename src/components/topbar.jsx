@@ -30,7 +30,7 @@ const Topbar = () => {
         </button>
         <Logo />
         <button onClick={handleHappy}>
-          <Image src={"/svg/colibri_chico.svg"} width={28} height={28} className="" />
+          <Image src={"/svg/colibri_chico.svg"} width={23} height={23} className="" />
         </button>
       </div>
 
