@@ -79,6 +79,7 @@ export default function Anuncios() {
                   alt="fondo banner mente lucida"
                   height={44}
                   width={800}
+                  className="w-full"
                 />
                 
               </div>

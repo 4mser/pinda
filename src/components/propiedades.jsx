@@ -36,7 +36,7 @@ const generateCategoriaElements = (categorias) => {
 
 const AutoScroll = () => {
   return (
-    <section className=" w-full overflow-hidden bg-yellow-200 mt-8 ">
+    <section className="w-full overflow-hidden bg-yellow-200 my-8 ">
       <div className="logos">
         <div className="logos-slide">
           {generateCategoriaElements(CategoriasData)}

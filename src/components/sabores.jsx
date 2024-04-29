@@ -53,12 +53,12 @@ export default function Sabores() {
         navigation={false}
       >
         {sabores.map((sabor, index) => (
-          <SwiperSlide key={index}>
-            <div className="overflow-hidden">
+          <SwiperSlide key={index} className="p-3">
+            <div className="pindacontainer overflow-hidden hover:scale-110 transition-all hover:cursor-pointer">
               <img
                 src={sabor.image}
                 alt={sabor.title}
-                className="w-full h-full object-cover rounded-md filter drop-shadow-sm"
+                className="w-full h-full object-cover rounded-md  hover:drop-shadow-lg"
               />
             </div>
             <p className="text-[12px] font-normal text-slate-700 py-1 text-center">
