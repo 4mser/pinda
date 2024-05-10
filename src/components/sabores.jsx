@@ -62,7 +62,7 @@ export default function Sabores() {
                 className="w-full h-full object-cover rounded-md filter drop-shadow-sm"
               />
             </div>
-            <p className="text-[12px] font-normal text-slate-700 py-1 text-center">
+            <p className="text-[12px] font-normal text-slate-700 py-1 text-center xl:text-[1vw]">
               {sabor.title} <br /> {sabor.subtitle}
             </p>
           </SwiperSlide>
