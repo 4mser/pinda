@@ -89,7 +89,7 @@ const Tienda = () => {
             </div>
             <motion.section
                 key={productoSeleccionado}  // Clave que cambia con cada selección
-                className='grid grid-cols-2 gap-3 md:grid-cols-3'
+                className='grid grid-cols-2 gap-3 md:grid-cols-3 2xl:grid-cols-6'
                 variants={containerVariants}
                 initial="hidden"
                 animate="visible"

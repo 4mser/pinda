@@ -83,4 +83,22 @@ animation: neon 3s ease-in-out infinite;
   
   }
   
- 
+  @keyframes colorChange {
+    0%, 100% {
+      background-color: #f5dc77; /* amarillo */
+    }
+    25% {
+      background-color: #c882e4; /* rojo */
+    }
+    50% {
+      background-color: #b1db6e; /* verde */
+    }
+    75% {
+      background-color: #699ae9; /* azul */
+    }
+  }
+  
+  .bg-animate-color {
+    animation: colorChange 8s infinite;
+  }
+  

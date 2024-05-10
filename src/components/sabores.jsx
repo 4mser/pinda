@@ -44,7 +44,7 @@ const sabores = [
 export default function Sabores() {
   return (
     <main className="pt-3 left-0 w-full ">
-      <h2 className="py-3 font-medium text-slate-700 px-4">Sabores de siempre</h2>
+      <h2 className="py-3 font-medium text-slate-700 px-4 md:text-[2vw]">Sabores de siempre</h2>
       <Swiper
         spaceBetween={12}
         slidesPerView={4.5}

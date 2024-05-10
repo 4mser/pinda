@@ -3,6 +3,7 @@ import "./globals.css";
 import Topbar from "@/components/topbar";
 import Navbar from "@/components/navbar";
 import Banner from "@/components/banner"
+import Image from "next/image";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,7 +24,14 @@ export default function RootLayout({ children }) {
 
       <body>
         <Banner />
-        <Topbar />
+        <Topbar text={'Menu'} >
+          <Image
+              src={"/icons/menudoble.svg"}
+              width={28}
+              height={20}
+              className="md:invert"
+            />
+        </Topbar>
         {children}
       </body>
     </html>

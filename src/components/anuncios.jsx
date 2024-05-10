@@ -11,7 +11,7 @@ import Image from "next/image";
 
 export default function Anuncios() {
   return (
-    <main className="mt-28 left-0 w-full overflow-hidden">
+    <main className="md:hidden mt-28 md:mt-64 left-0 w-full overflow-hidden">
       <Swiper
         spaceBetween={0}
         slidesPerView={1}

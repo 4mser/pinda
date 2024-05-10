@@ -36,7 +36,13 @@ const generateCategoriaElements = (categorias) => {
 
 const AutoScroll = () => {
   return (
-    <section className="w-full overflow-hidden bg-yellow-200 my-8 ">
+    <section className="relative w-full overflow-hidden bg-yellow-200 my-8">
+      <div 
+        className="hidden md:block absolute  h-28 w-48 bg-gradient-to-r from-white to-transparent"
+      />
+      <div 
+        className="hidden md:block absolute  right-0 h-28 w-48 bg-gradient-to-l from-white to-transparent"
+      />
       <div className="logos">
         <div className="logos-slide">
           {generateCategoriaElements(CategoriasData)}

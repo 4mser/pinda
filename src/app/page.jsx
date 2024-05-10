@@ -9,16 +9,19 @@ import Catalogo from "@/components/catalogo";
 import AutoScroll from "@/components/propiedades";
 import Image from "next/image";
 import Tienda from "@/components/tienda";
+import Pinda3d from "@/components/3dpinda";
 
 export default function Home() {
   return (
-    <main>
-        <Anuncios />
-        <Sabores />
-        <AutoScroll />
-        <Mapa />
-        <Tienda />
-        
+    <main className="md:flex flex-col  items-center">
+        <aside className="md:max-w-[60vw] top-0">
+          <Anuncios />
+          <Pinda3d />
+          <Sabores />
+          <AutoScroll />
+          <Mapa />
+          <Tienda />
+        </aside>
     </main>
   );
 }
