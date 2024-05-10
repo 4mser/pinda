@@ -125,7 +125,7 @@ const ProductoModal = ({ producto, isOpen, onClose }) => {
                         >
                             <h2 className="text-xl font-bold">{producto.nombre}</h2>
                             <p className="text-lg">${producto.precio}</p>
-                            <Image src={producto.imagen} alt={`Pinda ${producto.nombre}`} width={200} height={200} />
+                            <Image src={producto.imagen} alt={`Pinda ${producto.nombre}`} width={200} height={200} priority />
                             
                         </motion.div>
                     </motion.div>
@@ -204,6 +204,7 @@ const Tienda = () => {
                             width={100}
                             height={100}
                             className='translate-y-2'
+                            priority
                         />
                         <Image 
                             src="/svg/heart.svg"
