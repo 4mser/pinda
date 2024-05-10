@@ -106,7 +106,7 @@ const Tienda = () => {
                 {productos[productoSeleccionado].map((producto, index) => (
                     <motion.div
                         key={index}
-                        className={`${producto.bg} relative rounded-xl p-4 flex justify-between items-center flex-col shadow-sm hover:shadow-lg hover:cursor-pointer hover:transition-all max-h-[270px] gap-2`}
+                        className={`${producto.bg} relative rounded-xl p-4 flex justify-between items-center flex-col shadow-sm md:hover:shadow-lg hover:cursor-pointer hover:transition-all max-h-[270px] gap-2`}
                         variants={itemVariants}
                         whileHover={{ scale: 1.05}}
                     >
