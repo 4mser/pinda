@@ -23,18 +23,18 @@ const Mapa = () => {
   }, []);
 
   return (
-    <section className="px-4 h-[230px] overflow-hidden">
+    <section className="px-4  overflow-hidden pb-6">
       <div className="w-full flex justify-between py-2 items-center">
-        <h2 className=" font-medium text-slate-700">Puntos de venta</h2>
+        <h2 className=" font-medium text-slate-700 xl:text-[2vw]">Puntos de venta</h2>
         <Link href={"/mapa"}>
-          <p className="text-slate-500 text-xs font-medium pt-1">
+          <p className="text-slate-500 text-xs font-medium pt-1 ">
             Ver mapa completo
           </p>
         </Link>
       </div>
       <div
         ref={mapContainerRef}
-        style={{ height: "170px", borderRadius: "10px", overflow: "hidden" }}
+        style={{ height: "400px", borderRadius: "10px", overflow: "hidden" }}
       />
     </section>
   );
