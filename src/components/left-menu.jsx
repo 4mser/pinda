@@ -62,7 +62,7 @@ const LeftMenu = ({ openMenu, handleMenu }) => {
     <AnimatePresence>
       {openMenu && (
         <motion.div
-          className="fixed z-50 left-0 top-0 w-full min-h-[100vh]"
+          className="fixed z-50 left-0 top-0 w-full h-[100dvh]"
           variants={backdropVariants}
           initial="closed"
           animate="open"
@@ -70,7 +70,7 @@ const LeftMenu = ({ openMenu, handleMenu }) => {
           onClick={handleMenu}
         >
           <ul
-            className="w-[80%] h-[100vh] grid grid-rows-7 xl:grid-rows-5 gap-0 xl:grid-cols-3 xl:w-full xl:gap-5 xl:p-20"
+            className="w-[80%] h-[100dvh] grid grid-rows-7 xl:grid-rows-5 gap-0 xl:grid-cols-3 xl:w-full xl:gap-5 xl:p-20"
           >
             {menuItems.map((item, index) => (
               <Link href={item.href || "#"} key={index}>
