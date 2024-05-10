@@ -87,7 +87,7 @@ const Tienda = () => {
     return (
         <main className="px-4 pb-20">
             <div className="w-full flex gap-4 py-6 items-center">
-                <h2 className={`font-medium text-slate-700 cursor-pointer transition-all hover:scale-110 hover:shadow-md rounded-full px-3 py-1 ${productoSeleccionado === 'kombuchas' ? 'bg-cyan-200' : ''}`} onClick={() => setProductoSeleccionado('kombuchas')}>
+                <h2 className={`font-medium text-slate-700 cursor-pointer transition-all md:hover:scale-110 md:hover:shadow-md rounded-full px-3 py-1 ${productoSeleccionado === 'kombuchas' ? 'bg-cyan-200' : ''}`} onClick={() => setProductoSeleccionado('kombuchas')}>
                     Kombuchas
                 </h2>
                 <h2 className={`font-medium text-slate-700 cursor-pointer transition-all hover:scale-110 hover:shadow-md rounded-full px-3 py-1 ${productoSeleccionado === 'packs' ? 'bg-purple-200' : ''}`} onClick={() => setProductoSeleccionado('packs')}>
