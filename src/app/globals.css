@@ -101,4 +101,9 @@ animation: neon 3s ease-in-out infinite;
   .bg-animate-color {
     animation: colorChange 8s infinite;
   }
-  
+
+
+  .background {
+    backdrop-filter: blur(64px);
+    -webkit-backdrop-filter: blur(64px);
+  }
