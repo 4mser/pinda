@@ -9,37 +9,37 @@ const productos = {
             nombre: "Natural",
             precio: "1.990",
             imagen: "/images/pindas/pinda_natural.png",
-            bg:"bg-orange-100"
+            bg:"bg-gradient-to-br from-orange-100 to-yellow-200"
         },
         {
             nombre: "Arándano Lavanda",
             precio: "1.990",
             imagen: "/images/pindas/pinda_arandano_lavanda.png",
-            bg:"bg-blue-100"
+            bg:"bg-gradient-to-br from-blue-100 to-cyan-200"
         },
         {
             nombre: "Mango Jengibre",
             precio: "1.990",
             imagen: "/images/pindas/pinda_mango_jengibre.png",
-            bg:"bg-yellow-100"
+            bg:"bg-gradient-to-br from-yellow-100 to-orange-200"
         },
         {
             nombre: "Maqui Cacao",
             precio: "1.990",
             imagen: "/images/pindas/pinda_maqui_cacao.png",
-            bg:"bg-purple-100"
+            bg:"bg-gradient-to-br from-purple-100 to-pink-200"
         },
         {
             nombre: "Piña Albahaca",
             precio: "1.990",
             imagen: "/images/pindas/pinda_pina_albahaca.png",
-            bg:"bg-green-100"
+            bg:"bg-gradient-to-br from-green-100 to-lime-200"
         },
         {
             nombre: "Frambuesa Limón Menta",
             precio: "1.990",
             imagen: "/images/pindas/pinda_frambuesa_limon_menta.png",
-            bg:"bg-pink-100"
+            bg:"bg-gradient-to-br from-pink-100 to-pink-200"
         }
     ],
     packs: [
@@ -47,13 +47,13 @@ const productos = {
             nombre: "Natural",
             precio: "1.990",
             imagen: "/images/pindas/pinda_natural.png",
-            bg:"bg-orange-100"
+            bg:"bg-gradient-to-br from-orange-100"
         },
         {
             nombre: "Arándano Lavanda",
             precio: "1.990",
             imagen: "/images/pindas/pinda_arandano_lavanda.png",
-            bg:"bg-blue-100"
+            bg:"bg-gradient-to-br from-blue-100"
         },
     ]
 }
@@ -174,10 +174,10 @@ const Tienda = () => {
     return (
         <main className="px-4 pb-52">
             <div className="w-full flex gap-4 py-6 items-center">
-                <h2 className={`font-medium text-slate-700 cursor-pointer transition-all md:hover:scale-110  rounded-full px-3 py-1 ${productoSeleccionado === 'kombuchas' ? 'bg-cyan-200 shadow-sm md:hover:shadow-md' : ''}`} onClick={() => setProductoSeleccionado('kombuchas')}>
+                <h2 className={`font-medium xl:text-xl text-slate-700 cursor-pointer transition-all md:hover:scale-110  rounded-full px-3 py-1 ${productoSeleccionado === 'kombuchas' ? 'bg-yellow-200 shadow-sm md:hover:shadow-md' : ''}`} onClick={() => setProductoSeleccionado('kombuchas')}>
                     Kombuchas
                 </h2>
-                <h2 className={`font-medium text-slate-700 cursor-pointer transition-all hover:scale-110  rounded-full px-3 py-1 ${productoSeleccionado === 'packs' ? 'bg-purple-200 hover:shadow-md' : ''}`} onClick={() => setProductoSeleccionado('packs')}>
+                <h2 className={`font-medium xl:text-xl text-slate-700 cursor-pointer transition-all hover:scale-110  rounded-full px-3 py-1 ${productoSeleccionado === 'packs' ? 'bg-purple-200 hover:shadow-md' : ''}`} onClick={() => setProductoSeleccionado('packs')}>
                     Packs
                 </h2>
             </div>

@@ -20,7 +20,7 @@ const Topbar = () => {
     <section className="w-full">
 
       <div className="z-50  fixed w-full top-12 left-0 bg-white md:bg-white/0  md:bg-gradient-to-b from-white to-transparent flex justify-between px-4 py-2 md:px-10 md:gap-10 md:justify-start items-center border-b border-black/10 md:border-none md:py-10">
-        <button onClick={handleMenu} className="group relative md:rounded-full md:bg-slate-800 md:p-2 ">
+        <button onClick={handleMenu} className="group relative md:rounded-full md:bg-pindablack md:p-2 ">
           <div className="hidden md:block absolute w-0 h-0 group-hover:w-10 transition-all ease-in-out duration-300 group-hover:h-10 left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 bg-animate-color rounded-full" />
           <Image
             src={"/icons/menudoble.svg"}

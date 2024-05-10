@@ -63,7 +63,7 @@ export default function Sabores() {
               />
             </div>
             <p className="text-[12px] font-normal text-slate-700 py-1 text-center xl:text-[1vw]">
-              {sabor.title} <br /> {sabor.subtitle}
+              {sabor.title} <br className="xl:hidden" /> {sabor.subtitle}
             </p>
           </SwiperSlide>
         ))}
