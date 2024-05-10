@@ -23,7 +23,7 @@ const Mapa = () => {
   }, []);
 
   return (
-    <section className="px-4  overflow-hidden pb-6">
+    <section className="px-4  overflow-hidden pb-1">
       <div className="w-full flex justify-between py-2 items-center">
         <h2 className=" font-medium text-slate-700 xl:text-[2vw]">Puntos de venta</h2>
         <Link href={"/mapa"}>
