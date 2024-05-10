@@ -1,7 +1,6 @@
-
 'use client'
 import Image from 'next/image'
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 
 const productos = {
@@ -58,66 +57,95 @@ const productos = {
         },
     ]
 }
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.1, when: "beforeChildren" }
-  }
-}
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 }
-}
-
-const ProductButton = ({ title, selected, onClick }) => (
-  <h2 className={`font-medium text-slate-700 cursor-pointer transition-all hover:scale-110 hover:shadow-md rounded-full px-3 py-1 ${selected ? 'bg-cyan-200' : ''}`} onClick={onClick}>
-    {title}
-  </h2>
-);
-
-const ProductItem = ({ producto }) => (
-  <motion.div
-    className={`${producto.bg} relative rounded-xl p-2 flex justify-between items-center flex-col shadow-sm hover:shadow-lg hover:cursor-pointer transition-all`}
-    variants={itemVariants}
-    whileHover={{ scale: 1.05 }}
-  >
-    <Image src={producto.imagen} alt={`Pinda ${producto.nombre}`} width={100} height={100} />
-    <Image src="/svg/heart.svg" alt='heart' width={25} height={25} className='absolute right-4 top-4 hover:scale-110 transition' />
-    <div className='w-full p-2 flex items-center justify-between'>
-      <div>
-        <h2 className='text-[13px] text-slate-700'>{producto.nombre}</h2>
-        <p className='font-bold text-xl text-slate-800'>${producto.precio}</p>
-      </div>
-      <Image src="/svg/add.svg" alt='add' width={25} height={25} className='translate-y-1.5 hover:scale-110 transition' />
-    </div>
-  </motion.div>
-);
-
 const Tienda = () => {
-  const [productoSeleccionado, setProductoSeleccionado] = useState('kombuchas');
+    const [productoSeleccionado, setProductoSeleccionado] = useState('kombuchas');
+    const [minHeight, setMinHeight] = useState(0);
+    const containerRef = useRef(null);
 
-  return (
-    <main className="px-4 pb-20">
-      <div className="w-full flex gap-4 py-6 items-center">
-        <ProductButton title="Kombuchas" selected={productoSeleccionado === 'kombuchas'} onClick={() => setProductoSeleccionado('kombuchas')} />
-        <ProductButton title="Packs" selected={productoSeleccionado === 'packs'} onClick={() => setProductoSeleccionado('packs')} />
-      </div>
-      <motion.section
-        key={productoSeleccionado}
-        className='grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-5'
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-      >
-        {productos[productoSeleccionado].map((producto, index) => (
-          <ProductItem key={index} producto={producto} />
-        ))}
-      </motion.section>
-    </main>
-  )
+    useEffect(() => {
+        if (containerRef.current) {
+            setMinHeight(containerRef.current.offsetHeight);
+        }
+    }, [productoSeleccionado]);
+
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.1,
+                when: "beforeChildren"
+            }
+        }
+    }
+
+    const itemVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0 }
+    }
+
+    return (
+        <main className="px-4 pb-20">
+            <div className="w-full flex gap-4 py-6 items-center">
+                <h2 className={`font-medium text-slate-700 cursor-pointer transition-all hover:scale-110 hover:shadow-md rounded-full px-3 py-1 ${productoSeleccionado === 'kombuchas' ? 'bg-cyan-200' : ''}`} onClick={() => setProductoSeleccionado('kombuchas')}>
+                    Kombuchas
+                </h2>
+                <h2 className={`font-medium text-slate-700 cursor-pointer transition-all hover:scale-110 hover:shadow-md rounded-full px-3 py-1 ${productoSeleccionado === 'packs' ? 'bg-purple-200' : ''}`} onClick={() => setProductoSeleccionado('packs')}>
+                    Packs
+                </h2>
+            </div>
+            <motion.section
+                key={productoSeleccionado}
+                className='grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-5'
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
+                ref={containerRef}
+                style={{ minHeight: `${minHeight}px` }} // Aplica el estilo directamente para mantener la altura
+            >
+                {productos[productoSeleccionado].map((producto, index) => (
+                    <motion.div
+                        key={index}
+                        className={`${producto.bg} relative rounded-xl p-4 flex justify-between items-center flex-col shadow-sm hover:shadow-lg hover:cursor-pointer hover:transition-all max-h-[270px] gap-2`}
+                        variants={itemVariants}
+                        whileHover={{ scale: 1.05}}
+                    >
+                        <Image 
+                            src={producto.imagen}
+                            alt={`Pinda ${producto.nombre}`}
+                            width={100}
+                            height={100}
+                            className='translate-y-2'
+                        />
+                        <Image 
+                            src="/svg/heart.svg"
+                            alt='heart'
+                            width={25}
+                            height={25}
+                            className='absolute right-4 top-4 hover:scale-110 '
+                        />
+                        <div className='w-full flex items-center justify-between'>
+                            <div>
+                                <h2 className='text-[13px] text-slate-700'>
+                                    {producto.nombre}
+                                </h2>
+                                <p className='font-bold text-xl text-slate-800'>
+                                    ${producto.precio}
+                                </p>
+                            </div>
+                            <Image 
+                                src="/svg/add.svg"
+                                alt='add'
+                                width={25}
+                                height={25}
+                                className='translate-y-1.5 hover:scale-110 '
+                            />
+                        </div>
+                    </motion.div>
+                ))}
+            </motion.section>
+        </main>
+    )
 }
 
 export default Tienda;
