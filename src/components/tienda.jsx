@@ -172,7 +172,7 @@ const Tienda = () => {
     }
 
     return (
-        <main className="px-4 pb-52">
+        <main className="px-4 pb-10">
             <div className="w-full flex gap-4 py-6 items-center">
                 <h2 className={`font-medium xl:text-xl text-slate-700 cursor-pointer transition-all md:hover:scale-110  rounded-full px-3 py-1 ${productoSeleccionado === 'kombuchas' ? 'bg-yellow-200 shadow-sm md:hover:shadow-md' : ''}`} onClick={() => setProductoSeleccionado('kombuchas')}>
                     Kombuchas
