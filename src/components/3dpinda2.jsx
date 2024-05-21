@@ -1,59 +1,129 @@
 'use client';
 
-import React, { useRef, useEffect, useState } from 'react';
-import { Canvas, useThree } from '@react-three/fiber';
-import { OrbitControls, useGLTF, Environment, Sky, Effects } from '@react-three/drei';
+import React, { useRef, useEffect, Suspense, useMemo, useState } from 'react';
+import { Canvas } from '@react-three/fiber';
+import { OrbitControls, Environment, Plane } from '@react-three/drei';
 import * as THREE from 'three';
-import { EffectComposer, Bloom } from '@react-three/postprocessing';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-// Definir constantes para la posición, rotación y escala
-const MODEL_POSITION = [-0.7, -2.5, 0]; // [x, y, z]
-const MODEL_ROTATION = [0, 1, -0.4]; // [x, y, z] en radianes
-const MODEL_SCALE = [2, 2, 2]; // [x, y, z] para la escala del modelo
+gsap.registerPlugin(ScrollTrigger);
 
-const MouseControls = () => {
-  const { camera } = useThree();
-  const ref = useRef();
-  
+const MODEL_POSITION = [-0.1, 2.8, 0];
+const MODEL_ROTATION = [0, 1, -0.2];
+const MODEL_SCALE = [0.3, 0.3, 0.3];
+
+const GradientBackground = () => {
+  const planeRef = useRef();
+
+  const vertexShader = `
+    varying vec2 vUv;
+    void main() {
+      vUv = uv;
+      gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+    }
+  `;
+
+  const fragmentShader = `
+    uniform vec3 topColor;
+    uniform vec3 bottomColor;
+    varying vec2 vUv;
+    void main() {
+      gl_FragColor = vec4(mix(bottomColor, topColor, vUv.y), 1.0);
+    }
+  `;
+
+  const uniforms = useMemo(() => ({
+    topColor: { value: new THREE.Color('#ffffff') },
+    bottomColor: { value: new THREE.Color('#e0ffff') }
+  }), []);
+
   useEffect(() => {
-    const target = new THREE.Vector3();
-    const handleMouseMove = (event) => {
-      const { clientX, clientY } = event;
-      const { innerWidth, innerHeight } = window;
-      const x = (clientX / innerWidth) * 2 - 1;
-      const y = -(clientY / innerHeight) * 2 + 1;
-      
-      target.x = x * 0.5;
-      target.y = y * 0.5;
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-
-    const animate = () => {
-      if (ref.current) {
-        ref.current.target.lerp(target, 0.05); // Ajusta este valor para una latencia más alta (más suave)
-        ref.current.update();
+    const timeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#scroll-container",
+        start: "top top",
+        end: "bottom bottom",
+        scrub: 2,
       }
-      requestAnimationFrame(animate);
-    };
-    
-    animate();
+    });
 
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, []);
+    timeline
+      .to(uniforms.topColor.value, { 
+        r: 1, 
+        g: 1, 
+        b: 1, 
+        duration: 2 
+      })
+      .to(uniforms.bottomColor.value, { 
+        r: 0.878, 
+        g: 1, 
+        b: 1, 
+        duration: 2 
+      })
+      .to(uniforms.topColor.value, { 
+        r: 1, 
+        g: 1, 
+        b: 0.878, 
+        duration: 2 
+      })
+      .to(uniforms.bottomColor.value, { 
+        r: 1, 
+        g: 0.843, 
+        b: 0, 
+        duration: 2 
+      })
+      .to(uniforms.topColor.value, { 
+        r: 1, 
+        g: 0.878, 
+        b: 1, 
+        duration: 2 
+      })
+      .to(uniforms.bottomColor.value, { 
+        r: 0.937, 
+        g: 0.878, 
+        b: 1, 
+        duration: 2 
+      });
+  }, [uniforms]);
 
-  return <OrbitControls ref={ref} enableZoom={false} />;
+  return (
+    <Plane 
+      ref={planeRef} 
+      args={[100, 100]} 
+      position={[0, 0, -10]}
+    >
+      <shaderMaterial 
+        attach="material" 
+        vertexShader={vertexShader} 
+        fragmentShader={fragmentShader} 
+        uniforms={uniforms} 
+      />
+    </Plane>
+  );
 };
 
 const Pinda3d = () => {
-  const { scene } = useGLTF('/models/jazmin4.glb');
-  const [componentNames, setComponentNames] = useState([]);
+  const [scene, setScene] = useState(null);
+  const modelRef = useRef();
+  const textRefs = useRef([]);
+  const etiquetaRefs = useRef([]);
 
   useEffect(() => {
-    const names = [];
+    const loadModel = async () => {
+      try {
+        const gltf = await new GLTFLoader().loadAsync('/models/reishi.glb');
+        setScene(gltf.scene);
+      } catch (error) {
+        console.error('Error loading GLTF model:', error);
+      }
+    };
 
+    loadModel();
+  }, []);
+
+  useEffect(() => {
     if (scene) {
       scene.position.set(...MODEL_POSITION);
       scene.rotation.set(...MODEL_ROTATION);
@@ -61,96 +131,137 @@ const Pinda3d = () => {
 
       scene.traverse((child) => {
         if (child.isMesh) {
-          names.push(child.name);
-
           switch (child.name) {
             case 'botella':
               child.material = new THREE.MeshPhysicalMaterial({
                 color: new THREE.Color(0xAA6220),
-                metalness: 0.4,
-                roughness: 0.5,
+                metalness: 0.1,
+                roughness: 0.8,
                 clearcoat: 1,
-                clearcoatRoughness: 0.1,
-                transmission: 0.9,
-                opacity: 0.9,
+                clearcoatRoughness: 0,
+                transmission: 1,
+                opacity: 1,
                 transparent: true,
-                reflectivity: 0.5,
+                reflectivity: 0.2,
               });
               break;
             case 'etiqueta':
               child.material = new THREE.MeshStandardMaterial({
                 map: child.material.map,
                 roughness: 0.5,
-                metalness: 0,
+                metalness: 0.01,
                 transparent: true,
                 opacity: 1,
-                alphaTest: 0.5, // Esto asegurará que las áreas transparentes no sean renderizadas
+                alphaTest: 0.5,
               });
+              etiquetaRefs.current.push(child);
               break;
+            case 'etiqueta2':
+            case 'etiqueta3':
+              child.material = new THREE.MeshStandardMaterial({
+                map: child.material.map,
+                roughness: 0.5,
+                metalness: 0.01,
+                transparent: true,
+                opacity: 0,
+                alphaTest: 0.5,
+              });
+              etiquetaRefs.current.push(child);
+              break;   
             case 'liquido':
               child.material = new THREE.MeshPhysicalMaterial({
-                color: new THREE.Color(0xffe070),
-                metalness: 0,
-                roughness: 0.2,
-                transmission: 1,
-                opacity: 0.9,
-                transparent: true,
+                color: new THREE.Color(0x000000),
+              });   
+            case 'tapa':
+              child.material = new THREE.MeshStandardMaterial({
+                color: new THREE.Color(0x1f8ea3),
+                metalness: 1,
+                roughness: 0.3,
                 reflectivity: 0.5,
               });
-             
-              case 'tapa':
-                child.material = new THREE.MeshStandardMaterial({
-                  color: new THREE.Color(0x1f8ea3), // Azul metálico
-                  metalness: 1,
-                  roughness: 0.3,
-                  reflectivity: 0.5,
-                });
-                break;
-              default:
-                break;
-            }
+              break;
+            default:
+              break;
+          }
         }
       });
-      setComponentNames(names);
+      modelRef.current = scene;
     }
   }, [scene]);
 
+  useEffect(() => {
+    if (modelRef.current) {
+      const timeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#scroll-container",
+          start: "top top",
+          end: "bottom bottom",
+          scrub: 2,
+        }
+      });
+
+      timeline
+        .to(modelRef.current.position, { x: -0.2, y: 0.7, duration: 2 })
+        .to(modelRef.current.rotation, { x: 0, y: 2, z: -0.2, duration: 2 }, "-=2")
+        .to(modelRef.current.scale, { x: 0.6, y: 0.6, z: 0.6, duration: 2 }, "-=2")
+
+        .to(modelRef.current.position, { x: 0, y: -1.5, duration: 2 })
+        .to(modelRef.current.rotation, { x: -0.4, y: -5.7, z: -0.4, duration: 2 }, "-=2")
+        .to(etiquetaRefs.current[0].material, { opacity: 0, duration: 1 }, "-=2")
+        .to(etiquetaRefs.current[1].material, { opacity: 1, duration: 1 }, "-=2")
+
+        .to(modelRef.current.position, { x: 0.3, y: -3.5, duration: 2 })
+        .to(modelRef.current.rotation, { x: -1, y: 1, z: 0.7, duration: 2 }, "-=2")
+        .to(etiquetaRefs.current[1].material, { opacity: 0, duration: 1 }, "-=2")
+        .to(etiquetaRefs.current[2].material, { opacity: 1, duration: 1 }, "-=2");
+
+      textRefs.current.forEach((textRef, index) => {
+        gsap.to(textRef, {
+          opacity: 1,
+          y: 0,
+          duration: 1.5,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: textRef,
+            start: "top 75%",
+            end: "bottom 25%",
+            scrub: true,
+          }
+        });
+      });
+    }
+  }, [scene, etiquetaRefs]);
+
   return (
-    <div style={{ position: 'relative', width: '100%' }}>
-      <Canvas style={{ height: '100vh', width: '100%' }}>
-        <ambientLight intensity={0.7} />
-        <directionalLight
-          position={[10, 10, 10]}
-          intensity={0.5}
-          castShadow
-          shadow-mapSize-width={4096}
-          shadow-mapSize-height={4096}
-        />
-        <pointLight position={[-10, -10, -10]} intensity={1.5} />
-        <Sky
-          distance={4500}
-          sunPosition={[-100, 40, -100]}
-          inclination={0.5}
-          azimuth={0.25}
-          turbidity={1} // Reducir la turbidez para un cielo más claro
-          rayleigh={3} // Aumentar el scattering de Rayleigh para un cielo más azul y claro
-          mieCoefficient={0.5}
-          mieDirectionalG={0.01}
-        />
-        <Environment preset="forest" />
-        <primitive object={scene} />
-        <MouseControls />
-        <EffectComposer>
-          <Bloom
-            intensity={0.2} // Intensidad del efecto bloom
-            width={300} // Ancho de la convolución del bloom
-            height={300} // Alto de la convolución del bloom
-            kernelSize={3} // Tamaño del kernel del bloom
-            luminanceThreshold={0.15} // Umbral de luminancia para el bloom
-            luminanceSmoothing={0.025} // Suavizado de luminancia para el bloom
-          />
-        </EffectComposer>
+    <div id="scroll-container" style={{ position: 'relative', width: '100%', height: '600vh' }}>
+      <Canvas style={{ height: '600vh', width: '100%' }}>
+        <ambientLight intensity={0.6} />
+        <directionalLight position={[10, 10, 5]} intensity={1.5} />
+        <Environment preset='forest' />
+        <Suspense fallback={null}>
+          {scene && <primitive object={scene} />}
+          <GradientBackground />
+        </Suspense>
+        <OrbitControls enableZoom={false} />
       </Canvas>
+      {["", "NUEVA LÍNEA FUNCIONAL", "", "", "", ""].map((text, index) => (
+        <div
+          key={index}
+          ref={el => textRefs.current[index] = el}
+          style={{
+            position: 'absolute',
+            top: `${100 + index * 80}vh`,
+            left: index % 3 === 0 ? '10%' : '80%',
+            transform: 'translate(-50%, -50%)',
+            fontWeight: 'bold',
+            fontSize: '3rem',
+            opacity: 0,
+            transition: 'opacity 0.5s ease-out, transform 0.5s ease-out',
+          }}
+        >
+          <h1 className='left-0 text-pindablack'>{text}</h1>
+        </div>
+      ))}
     </div>
   );
 };
