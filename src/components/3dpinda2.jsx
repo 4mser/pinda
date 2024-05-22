@@ -101,12 +101,57 @@ const Pinda3d = () => {
 
       scene.traverse((child) => {
         if (child.isMesh) {
-          const materialSettings = getMaterialSettings(child.name);
-          if (materialSettings) {
-            child.material = new THREE[materialSettings.type](materialSettings.properties);
-            if (child.name.includes('etiqueta')) {
+          switch (child.name) {
+            case 'botella':
+              child.material = new THREE.MeshPhysicalMaterial({
+                color: new THREE.Color(0xAA6220),
+                metalness: 0.1,
+                roughness: 0.8,
+                clearcoat: 1,
+                clearcoatRoughness: 0,
+                transmission: 1,
+                opacity: 1,
+                transparent: true,
+                reflectivity: 0.2,
+              });
+              break;
+            case 'etiqueta':
+              child.material = new THREE.MeshStandardMaterial({
+                map: child.material.map,
+                roughness: 0.5,
+                metalness: 0.01,
+                transparent: true,
+                opacity: 1,
+                alphaTest: 0.5,
+              });
               etiquetaRefs.current.push(child);
-            }
+              break;
+            case 'etiqueta2':
+            case 'etiqueta3':
+              child.material = new THREE.MeshStandardMaterial({
+                map: child.material.map,
+                roughness: 0.5,
+                metalness: 0.01,
+                transparent: true,
+                opacity: 0,
+                alphaTest: 0.5,
+              });
+              etiquetaRefs.current.push(child);
+              break;   
+            case 'liquido':
+              child.material = new THREE.MeshPhysicalMaterial({
+                color: new THREE.Color(0x000000),
+              });   
+            case 'tapa':
+              child.material = new THREE.MeshStandardMaterial({
+                color: new THREE.Color(0x1f8ea3),
+                metalness: 1,
+                roughness: 0.3,
+                reflectivity: 0.5,
+              });
+              break;
+            default:
+              break;
           }
         }
       });
@@ -187,70 +232,6 @@ const Pinda3d = () => {
       ))}
     </div>
   );
-};
-
-const getMaterialSettings = (name) => {
-  switch (name) {
-    case 'botella':
-      return {
-        type: 'MeshPhysicalMaterial',
-        properties: {
-          color: new THREE.Color(0xAA6220),
-          metalness: 0.1,
-          roughness: 0.8,
-          clearcoat: 1,
-          clearcoatRoughness: 0,
-          transmission: 1,
-          opacity: 1,
-          transparent: true,
-          reflectivity: 0.2,
-        }
-      };
-    case 'etiqueta':
-      return {
-        type: 'MeshStandardMaterial',
-        properties: {
-          map: new THREE.TextureLoader().load('/path/to/texture1.jpg'),
-          roughness: 0.5,
-          metalness: 0.01,
-          transparent: true,
-          opacity: 1,
-          alphaTest: 0.5,
-        }
-      };
-    case 'etiqueta2':
-    case 'etiqueta3':
-      return {
-        type: 'MeshStandardMaterial',
-        properties: {
-          map: new THREE.TextureLoader().load('/path/to/texture2.jpg'),
-          roughness: 0.5,
-          metalness: 0.01,
-          transparent: true,
-          opacity: 0,
-          alphaTest: 0.5,
-        }
-      };
-    case 'liquido':
-      return {
-        type: 'MeshPhysicalMaterial',
-        properties: {
-          color: new THREE.Color(0x000000),
-        }
-      };
-    case 'tapa':
-      return {
-        type: 'MeshStandardMaterial',
-        properties: {
-          color: new THREE.Color(0x1f8ea3),
-          metalness: 1,
-          roughness: 0.3,
-          reflectivity: 0.5,
-        }
-      };
-    default:
-      return null;
-  }
 };
 
 export default Pinda3d;
