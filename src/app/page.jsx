@@ -18,10 +18,10 @@ import Pinda3d2 from "@/components/3dpinda2";
 export default function Home() {
   return (
     <main className="md:flex flex-col items-center">
-        <Pinda3d2 />
+        {/* <Pinda3d2 /> */}
       <aside className="md:max-w-[90vw] xl:max-w-[60vw] top-0">
         <Anuncios />
-      <Catalogo />
+        <Catalogo />
         <Sabores />
         <AutoScroll />
         <Mapa />
