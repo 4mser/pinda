@@ -6,9 +6,9 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { gsap } from 'gsap';
 
-const MODEL_POSITION = [0, -2, 0];
-const MODEL_ROTATION = [0, 0.9, -0.5];
-const MODEL_SCALE = [1, 1, 1];
+const MODEL_POSITION = [-1, -2.5, 0];
+const MODEL_ROTATION = [0.2, 1.2, -0.5];
+const MODEL_SCALE = [2.5, 2.5, 2.5];
 
 const AnimatedModel = ({ scene, rotation }) => {
   const animatedScene = useRef(scene);
@@ -52,7 +52,7 @@ const PindaBottle = () => {
           switch (child.name) {
             case 'botella':
               child.material = new THREE.MeshPhysicalMaterial({
-                color: new THREE.Color(0xAA6220),
+                color: new THREE.Color(0x6A4111),
                 metalness: 0.1,
                 roughness: 0.8,
                 clearcoat: 1,
@@ -70,15 +70,14 @@ const PindaBottle = () => {
               child.material = new THREE.MeshStandardMaterial({
                 map: child.material.map,
                 roughness: 0.5,
-                metalness: 0.01,
-                transparent: true,
+                metalness: 0.1,
                 opacity: child.name === visibleLabel ? 1 : 0, // Fade effect
                 alphaTest: 0.5,
               });
               break;
             case 'liquido':
               child.material = new THREE.MeshPhysicalMaterial({
-                color: new THREE.Color(0x000000),
+                color: new THREE.Color(0x97836C),
               });
               break;
             case 'tapa':
@@ -133,37 +132,37 @@ const PindaBottle = () => {
   };
 
   return (
-    <>
-      <Canvas ref={canvasRef} style={{ height: '100dvh', width: '100vw' }}>
-        <ambientLight intensity={1} />
-        <directionalLight position={[10, 10, 5]} intensity={1.5} />
-        <Suspense fallback={null}>
-          {scene && <AnimatedModel scene={scene} rotation={modelRef.current?.rotation || [0, 0, 0]} />}
-        </Suspense>
-        <OrbitControls enableZoom={true} />
-        <Environment preset='forest' />
-      </Canvas>
-      <div className="absolute bottom-4 right-4 flex space-y-4 flex-col">
-        <button 
-          className="px-4 py-2 bg-blue-200 text-white text-sm rounded-full hover:scale-110 transition-all" 
-          onClick={() => handleLabelChange('etiqueta')}
-        >
-          Jazmín y Melena de León
-        </button>
-        <button 
-          className="px-4 py-2 bg-yellow-200 text-white text-sm rounded-full hover:scale-110 transition-all" 
-          onClick={() => handleLabelChange('etiqueta2')}
-        >
-          Limón-Jengibre y Cordyceps
-        </button>
-        <button 
-          className="px-4 py-2 bg-pink-200 text-white text-sm rounded-full hover:scale-110 transition-all" 
-          onClick={() => handleLabelChange('etiqueta3')}
-        >
-          Flor de Jamaica, Rooibos y Reishi
-        </button>
-      </div>
-    </>
+    <main className='relative'>
+        <Canvas ref={canvasRef} style={{width: '100vw', height:'550px', marginTop:'6rem'}}>
+          <ambientLight intensity={1} />
+          <directionalLight position={[10, 10, 5]} intensity={1.5} />
+          <Suspense fallback={null}>
+            {scene && <AnimatedModel scene={scene} rotation={modelRef.current?.rotation || [0, 0, 0]} />}
+          </Suspense>
+          <OrbitControls enableZoom={false} />
+          <Environment preset='forest' />
+        </Canvas>
+        <div className="absolute top-28 right-4 flex space-y-4 flex-col">
+          <button 
+            className="px-4 py-2 bg-blue-200 text-white text-sm rounded-full hover:scale-110 transition-all" 
+            onClick={() => handleLabelChange('etiqueta')}
+          >
+            Jazmín y Melena de León
+          </button>
+          <button 
+            className="px-4 py-2 bg-yellow-200 text-white text-sm rounded-full hover:scale-110 transition-all" 
+            onClick={() => handleLabelChange('etiqueta2')}
+          >
+            Limón-Jengibre y Cordyceps
+          </button>
+          <button 
+            className="px-4 py-2 bg-pink-200 text-white text-sm rounded-full hover:scale-110 transition-all" 
+            onClick={() => handleLabelChange('etiqueta3')}
+          >
+            Flor de Jamaica, Rooibos y Reishi
+          </button>
+        </div>
+    </main>
   );
 };
 

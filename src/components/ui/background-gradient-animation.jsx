@@ -3,37 +3,22 @@ import { useEffect, useRef, useState } from "react";
 import { cn } from "../../../utils/cn";
 
 export const BackgroundGradientAnimation = ({
-  gradientBackgroundStart = "rgb(108, 0, 162)",
+  gradientBackgroundStart = "rgb(165, 78, 209)",
   gradientBackgroundEnd = "rgb(0, 17, 82)",
   firstColor = "18, 113, 255",
   secondColor = "221, 74, 255",
   thirdColor = "100, 220, 255",
   fourthColor = "200, 50, 50",
   fifthColor = "180, 180, 50",
-  pointerColor = "140, 100, 255",
+  pointerColor = "34, 243, 188",
   size = "100%",
   blendingValue = "hard-light",
   children,
   className,
   interactive = true,
   containerClassName,
-}: {
-  gradientBackgroundStart?: string;
-  gradientBackgroundEnd?: string;
-  firstColor?: string;
-  secondColor?: string;
-  thirdColor?: string;
-  fourthColor?: string;
-  fifthColor?: string;
-  pointerColor?: string;
-  size?: string;
-  blendingValue?: string;
-  children?: React.ReactNode;
-  className?: string;
-  interactive?: boolean;
-  containerClassName?: string;
 }) => {
-  const interactiveRef = useRef<HTMLDivElement>(null);
+  const interactiveRef = useRef(null);
 
   const [curX, setCurX] = useState(0);
   const [curY, setCurY] = useState(0);
@@ -73,7 +58,7 @@ export const BackgroundGradientAnimation = ({
     move();
   }, [tgX, tgY]);
 
-  const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
+  const handleMouseMove = (event) => {
     if (interactiveRef.current) {
       const rect = interactiveRef.current.getBoundingClientRect();
       setTgX(event.clientX - rect.left);
@@ -89,7 +74,7 @@ export const BackgroundGradientAnimation = ({
   return (
     <div
       className={cn(
-        "h-56 w-screen relative overflow-hidden top-0 left-0 bg-[linear-gradient(40deg,var(--gradient-background-start),var(--gradient-background-end))]",
+        "h-56 w-screen relative overflow-hidden top-0 left-0 bg-[linear-gradient(40deg,var(--gradient-background-start),var(--gradient-background-end))] z-1",
         containerClassName
       )}
     >
