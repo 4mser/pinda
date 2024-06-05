@@ -69,7 +69,7 @@ const LeftMenu = ({ openMenu, handleMenu }) => {
           exit="closed"
           onClick={handleMenu}
         >
-          <ul className="w-[80%] h-[100vh] grid grid-rows-7 xl:grid-rows-5 gap-0 xl:grid-cols-3 xl:w-full xl:gap-5 xl:p-20">
+          <ul className="w-[80%] h-[100dvh] grid grid-rows-7 xl:grid-rows-5 gap-0 xl:grid-cols-3 xl:w-full xl:gap-5 xl:p-20">
             {menuItems.map((item, index) => (
               <Link href={item.href} key={index} onClick={handleMenu}>
                 <motion.li

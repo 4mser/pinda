@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 import React, { useState, useEffect, useRef } from 'react'
-import { motion, AnimatePresence, delay } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 
 const productos = {
     kombuchas: [
@@ -56,16 +56,16 @@ const productos = {
             bg:"bg-gradient-to-br from-blue-100"
         },
     ]
-}
+};
 
 const modalVariants = {
     hidden: {
         opacity: 0,
-        y:20
+        y: 20
     },
     visible: {
         opacity: 1,
-        y:0,
+        y: 0,
         transition: {
             duration: 0.3,
             delay: 0.2
@@ -73,10 +73,10 @@ const modalVariants = {
     },
     exit: {
         opacity: 0,
+        y: 20,
         transition: {
             duration: 0.3
-        },
-        y:20
+        }
     }
 };
 
@@ -112,21 +112,19 @@ const ProductoModal = ({ producto, isOpen, onClose }) => {
                     />
                     <motion.div
                         className="fixed inset-0 flex w-auto h-auto justify-center items-center z-50"
+                        variants={modalVariants}
                         initial="hidden"
                         animate="visible"
                         exit="exit"
                         onClick={onClose}
-
                     >
                         <motion.div
-                            className="bg-white p-5 rounded-lg max-w-md bg-"
-                            variants={modalVariants}
-                            onClick={(e) => e.stopPropagation()} // Previene el cierre del modal al hacer clic en el contenido
+                            className="bg-white p-5 rounded-lg max-w-md"
+                            onClick={(e) => e.stopPropagation()}
                         >
                             <h2 className="text-xl font-bold">{producto.nombre}</h2>
                             <p className="text-lg">${producto.precio}</p>
                             <Image src={producto.imagen} alt={`Pinda ${producto.nombre}`} width={200} height={200} priority />
-                            
                         </motion.div>
                     </motion.div>
                 </>
@@ -164,38 +162,44 @@ const Tienda = () => {
                 when: "beforeChildren"
             }
         }
-    }
+    };
 
     const itemVariants = {
         hidden: { opacity: 0, y: 20 },
         visible: { opacity: 1, y: 0 }
-    }
+    };
 
     return (
         <main className="px-4 pb-10">
             <div className="w-full flex gap-4 py-6 items-center">
-                <h2 className={`font-medium xl:text-xl text-slate-700 cursor-pointer transition-all md:hover:scale-110  rounded-full px-3 py-1 ${productoSeleccionado === 'kombuchas' ? 'bg-yellow-200 shadow-sm md:hover:shadow-md' : ''}`} onClick={() => setProductoSeleccionado('kombuchas')}>
+                <h2
+                    className={`font-medium xl:text-xl text-slate-700 cursor-pointer transition-all md:hover:scale-110 rounded-full px-3 py-1 ${productoSeleccionado === 'kombuchas' ? 'bg-yellow-200 ' : ''}`}
+                    onClick={() => setProductoSeleccionado('kombuchas')}
+                >
                     Kombuchas
                 </h2>
-                <h2 className={`font-medium xl:text-xl text-slate-700 cursor-pointer transition-all hover:scale-110  rounded-full px-3 py-1 ${productoSeleccionado === 'packs' ? 'bg-purple-200 hover:shadow-md' : ''}`} onClick={() => setProductoSeleccionado('packs')}>
+                <h2
+                    className={`font-medium xl:text-xl text-slate-700 cursor-pointer transition-all md:hover:scale-110 rounded-full px-3 py-1 ${productoSeleccionado === 'packs' ? 'bg-purple-200 ' : ''}`}
+                    onClick={() => setProductoSeleccionado('packs')}
+                >
                     Packs
                 </h2>
             </div>
             <motion.section
                 key={productoSeleccionado}
-                className='grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-5'
+                className="grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-5"
                 variants={containerVariants}
                 initial="hidden"
                 animate="visible"
                 ref={containerRef}
-                style={{ minHeight: `${minHeight}px` }} // Aplica el estilo directamente para mantener la altura
+                style={{ minHeight: `${minHeight}px` }}
             >
                 {productos[productoSeleccionado].map((producto, index) => (
                     <motion.div
                         key={index}
-                        className={`${producto.bg} relative rounded-xl p-4 flex justify-between items-center flex-col shadow-sm md:hover:shadow-lg hover:cursor-pointer hover:transition-all max-h-[270px] gap-2`}
+                        className={`${producto.bg} relative rounded-xl p-4 flex  items-center flex-col shadow-sm md:hover:shadow-lg hover:cursor-pointer hover:transition-all max-h-[270px] gap-2`}
                         variants={itemVariants}
-                        whileHover={{ scale: 1.05}}
+                        whileHover={{ scale: 1.05 }}
                         onClick={() => handleCardClick(producto)}
                     >
                         <Image 
@@ -203,31 +207,27 @@ const Tienda = () => {
                             alt={`Pinda ${producto.nombre}`}
                             width={100}
                             height={100}
-                            className='translate-y-2'
+                            className="translate-y-2"
                             priority
                         />
                         <Image 
                             src="/svg/heart.svg"
-                            alt='heart'
+                            alt="heart"
                             width={25}
                             height={25}
-                            className='absolute right-4 top-4 hover:scale-110 '
+                            className="absolute right-4 top-4 hover:scale-110"
                         />
-                        <div className='w-full flex items-center justify-between'>
+                        <div className="w-full flex items-center justify-between">
                             <div>
-                                <h2 className='text-[13px] text-slate-700'>
-                                    {producto.nombre}
-                                </h2>
-                                <p className='font-bold text-xl text-slate-800'>
-                                    ${producto.precio}
-                                </p>
+                                <h2 className="text-[13px] text-slate-700">{producto.nombre}</h2>
+                                <p className="font-bold text-xl text-slate-800">${producto.precio}</p>
                             </div>
                             <Image 
                                 src="/svg/add.svg"
-                                alt='add'
+                                alt="add"
                                 width={25}
                                 height={25}
-                                className='translate-y-1.5 hover:scale-110 '
+                                className="translate-y-1.5 hover:scale-110"
                             />
                         </div>
                     </motion.div>
@@ -235,7 +235,7 @@ const Tienda = () => {
             </motion.section>
             <ProductoModal producto={modalProducto} isOpen={!!modalProducto} onClose={handleCloseModal} />
         </main>
-    )
-}
+    );
+};
 
 export default Tienda;
