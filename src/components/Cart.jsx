@@ -64,7 +64,7 @@ const Cart = ({ openCart, handleCart }) => {
             <h2 className="text-xl font-bold mb-4 text-emerald-500">CARRITO EN CONSTRUCCIÓN</h2>
             <ul className="overflow-y-auto h-full pb-[140px]">
               {cart.map((producto, index) => (
-                <li key={index} className="flex justify-between items-center border-b py-4">
+                <li key={index} className="flex justify-between gap-3 items-center border-b py-4">
                   <div className="flex items-center gap-4">
                     <Image src={producto.imagen} alt={producto.nombre} width={50} height={50} className="rounded" />
                     <div>
@@ -76,7 +76,7 @@ const Cart = ({ openCart, handleCart }) => {
                     <button onClick={() => removeFromCart(producto)} className="bg-gradient-to-br from-orange-300 to-red-400 p-1 rounded-full h-5 w-5 mr-2">
                       <Image src="/svg/minus.svg" className="opacity-50" alt="remove" width={20} height={20} />
                     </button>
-                    <p className="pr-2 text-black/70 text-lg">{producto.cantidad} Un </p>
+                    <p className="pr-2 text-black/70 text-base text-nowrap">{producto.cantidad} Un </p>
                     <button onClick={() => addToCart(producto)} className="bg-gradient-to-br from-yellow-300 to-green-400 p-1 rounded-full h-5 w-5">
                       <Image src="/svg/add2.svg" className="opacity-50" alt="add" width={20} height={20} />
                     </button>
