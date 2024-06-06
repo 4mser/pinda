@@ -133,7 +133,8 @@ const PindaBottle = () => {
 
   return (
     <main className='relative'>
-        <Canvas ref={canvasRef} style={{width: '100vw', height:'550px', marginTop:'6rem'}}>
+      <h2 className='y-3 font-medium text-slate-700 px-4 xl:text-[2vw]'>Línea Funcional</h2>
+        <Canvas ref={canvasRef} style={{width: '100vw', height:'550px', marginTop:'1rem'}}>
           <ambientLight intensity={1} />
           <directionalLight position={[10, 10, 5]} intensity={1.5} />
           <Suspense fallback={null}>

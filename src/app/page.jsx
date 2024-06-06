@@ -21,11 +21,11 @@ export default function Home() {
         <AutoScroll />
         <Mapa />
         <Tienda />
+        <PindaBottle />
         <Corfo />
         
       </aside>
       <Footer />
-      {/* <PindaBottle /> */}
     </main>
   );
 }
