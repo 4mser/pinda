@@ -62,7 +62,7 @@ const LeftMenu = ({ openMenu, handleMenu }) => {
     <AnimatePresence>
       {openMenu && (
         <motion.div
-          className="fixed z-50 left-0 top-0 w-full min-h-[100dvh] backdrop-blur-xl"
+          className="fixed z-50 left-0 top-0 w-full min-h-[100dvh] backdrop-blur-xl "
           variants={backdropVariants}
           initial="closed"
           animate="open"

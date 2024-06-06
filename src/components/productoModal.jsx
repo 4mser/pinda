@@ -3,48 +3,18 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useCart } from '../../contexts/CartContext';
 
 const modalVariants = {
-    hidden: {
-        opacity: 0,
-        y: 20
-    },
-    visible: {
-        opacity: 1,
-        y: 0,
-        transition: {
-            duration: 0.3,
-            delay: 0.2
-        }
-    },
-    exit: {
-        opacity: 0,
-        y: 20,
-        transition: {
-            duration: 0.3
-        }
-    }
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.3, delay: 0.2 } },
+    exit: { opacity: 0, y: 20, transition: { duration: 0.3 } }
 };
 
 const backdropVariants = {
-    hidden: {
-        opacity: 0
-    },
-    visible: {
-        opacity: 1,
-        transition: {
-            duration: 0.3
-        }
-    },
-    exit: {
-        opacity: 0,
-        transition: {
-            duration: 0.3
-        }
-    }
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.3 } },
+    exit: { opacity: 0, transition: { duration: 0.3 } }
 };
 
 const ProductoModal = ({ producto, isOpen, onClose }) => {
-
-
     const { addToCart } = useCart();
 
     const handleAddToCart = () => {
@@ -72,13 +42,16 @@ const ProductoModal = ({ producto, isOpen, onClose }) => {
                         onClick={onClose}
                     >
                         <motion.div
-                            className="bg-white p-5 rounded-lg max-w-5xl"
+                            className="bg-white p-5 rounded-lg max-w-3xl"
                             onClick={(e) => e.stopPropagation()}
                         >
-                            <h2 className="text-xl font-bold">{producto.nombre}</h2>
-                            <p className="text-lg">${producto.precio}</p>
-                            <Image src={producto.imagenModal} alt={`Pinda ${producto.nombre}`} width={400} height={400} priority />
-                            <button className="mt-4 bg-blue-500 text-white px-4 py-2 rounded" onClick={handleAddToCart}>
+                            <h2 className="text-3xl font-bold text-black/80">{producto.nombre}</h2>
+                            <Image src={producto.imagenModal} alt={`Pinda ${producto.nombre}`} width={300} height={300} priority className='w-full' />
+                            <p className="text-3xl p-2 mt-1 text-black/70">${producto.precio}</p>
+                            <button 
+                                className={`mt-2 bg-gradient-to-tr ${producto.colorBoton} text-black/50  px-4 py-2 rounded `} 
+                                onClick={handleAddToCart}
+                            >
                                 Añadir al Carrito
                             </button>
                         </motion.div>
