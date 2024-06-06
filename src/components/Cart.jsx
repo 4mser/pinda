@@ -46,7 +46,7 @@ const Cart = ({ openCart, handleCart }) => {
     <AnimatePresence>
       {openCart && (
         <motion.div
-          className="fixed z-50 left-0 top-0 w-full min-h-[100dvh] backdrop-blur-xl flex justify-end items-center"
+          className="fixed z-50 left-0 top-0 w-full h-[100dvh] backdrop-blur-xl flex justify-end items-center"
           variants={backdropCartVariants}
           initial="closed"
           animate="open"
@@ -54,7 +54,7 @@ const Cart = ({ openCart, handleCart }) => {
           onClick={handleCart}
         >
           <motion.div
-            className="relative bg-white p-5 w-[80%] md:w-1/3 h-screen shadow-lg"
+            className="relative bg-white p-5 w-[80%] md:w-1/3 h-[100dvh] shadow-lg"
             variants={cartVariants}
             initial="closed"
             animate="open"
