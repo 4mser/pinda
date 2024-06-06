@@ -145,19 +145,19 @@ const PindaBottle = () => {
         </Canvas>
         <div className="absolute top-28 right-4 flex space-y-4 flex-col">
           <button 
-            className="px-4 py-2 bg-blue-200 text-white text-sm rounded-full hover:scale-110 transition-all" 
+            className="px-4 py-2 bg-blue-200 text-black/40 text-sm rounded-full hover:scale-110 transition-all" 
             onClick={() => handleLabelChange('etiqueta')}
           >
             Jazmín y Melena de León
           </button>
           <button 
-            className="px-4 py-2 bg-yellow-200 text-white text-sm rounded-full hover:scale-110 transition-all" 
+            className="px-4 py-2 bg-yellow-200 text-black/40 text-sm rounded-full hover:scale-110 transition-all" 
             onClick={() => handleLabelChange('etiqueta2')}
           >
             Limón-Jengibre y Cordyceps
           </button>
           <button 
-            className="px-4 py-2 bg-pink-200 text-white text-sm rounded-full hover:scale-110 transition-all" 
+            className="px-4 py-2 bg-pink-200 text-black/40 text-sm rounded-full hover:scale-110 transition-all" 
             onClick={() => handleLabelChange('etiqueta3')}
           >
             Flor de Jamaica, Rooibos y Reishi

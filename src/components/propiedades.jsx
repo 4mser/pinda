@@ -40,7 +40,7 @@ const generateCategoriaElements = (categorias) => {
 
 const AutoScroll = () => {
   return (
-    <section className="relative w-full overflow-hidden bg-yellow-200 my-8 border-t-2 border-b-2 border-black/30">
+    <section className="relative w-full overflow-hidden bg-yellow-200 my-8 ">
       <div 
         className="hidden md:block absolute  h-28 w-48 bg-gradient-to-r from-white to-transparent"
       />
