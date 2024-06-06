@@ -54,17 +54,17 @@ const Cart = ({ openCart, handleCart }) => {
           onClick={handleCart}
         >
           <motion.div
-            className="bg-white p-5 w-[80%] md:w-1/3 h-screen shadow-lg overflow-y-auto"
+            className="relative bg-white p-5 w-[80%] md:w-1/3 h-screen shadow-lg"
             variants={cartVariants}
             initial="closed"
             animate="open"
             exit="closed"
             onClick={(e) => e.stopPropagation()}
           >
-            <h2 className="text-xl font-bold mb-4">Carrito de Compras en Construcción</h2>
-            <ul>
+            <h2 className="text-xl font-bold mb-4 text-emerald-500">CARRITO EN CONSTRUCCIÓN</h2>
+            <ul className="overflow-y-auto h-full pb-[140px]">
               {cart.map((producto, index) => (
-                <li key={index} className="flex justify-between items-center mb-4">
+                <li key={index} className="flex justify-between items-center border-b py-4">
                   <div className="flex items-center gap-4">
                     <Image src={producto.imagen} alt={producto.nombre} width={50} height={50} className="rounded" />
                     <div>
@@ -84,7 +84,7 @@ const Cart = ({ openCart, handleCart }) => {
                 </li>
               ))}
             </ul>
-            <div className="mt-4 border-t pt-4">
+            <div className="border-t p-4 absolute bottom-0 bg-white left-0 w-full">
               <div className="w-full flex justify-between items-center">
                 <h3 className="text-xl font-bold text-black/70">Total: </h3>
                 <h3 className="text-xl font-bold text-black/70">${totalPrice.toFixed(3)}</h3>
