@@ -15,7 +15,7 @@ const CartIcon = ({ handleCart }) => {
         className="md:w-12 cursor-pointer"
       />
       {cartCount > 0 && (
-        <div className="absolute -top-1.5 -right-1.5 bg-red-500 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center">
+        <div className="absolute -top-1.5 -right-1.5 bg-red-500 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center md:w-7 md:h-7 md:text-base">
           {cartCount}
         </div>
       )}
