@@ -21,7 +21,6 @@ export default function Home() {
         <AutoScroll />
         <Mapa />
         <Tienda />
-        <Posts />
         <Corfo />
         
       </aside>
