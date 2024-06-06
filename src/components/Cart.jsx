@@ -10,21 +10,17 @@ const Cart = ({ openCart, handleCart }) => {
     open: {
       opacity: 1,
       x: "0",
-      backdropFilter: "blur(10px)",
       transition: {
         type: "tween",
         duration: 0.3,
-        backdropFilter: { duration: 0.3 },
       },
     },
     closed: {
       opacity: 0,
       x: "100%",
-      backdropFilter: "blur(0px)",
       transition: {
         type: "tween",
         duration: 0.3,
-        backdropFilter: { duration: 0.3 },
       },
     },
   };
@@ -46,7 +42,7 @@ const Cart = ({ openCart, handleCart }) => {
     <AnimatePresence>
       {openCart && (
         <motion.div
-          className="fixed z-[100] left-0 top-0 w-full h-[100dvh] backdrop-blur-xl flex justify-end items-center"
+          className="fixed z-[100] left-0 top-0 w-full h-[100dvh] bg-black/50 flex justify-end items-center"
           variants={backdropCartVariants}
           initial="closed"
           animate="open"

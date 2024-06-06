@@ -45,7 +45,6 @@ const ProductoModal = ({ producto, isOpen, onClose }) => {
                             className="bg-white p-5 rounded-lg max-w-3xl"
                             onClick={(e) => e.stopPropagation()}
                         >
-                            <h2 className="text-3xl font-bold text-black/80">{producto.nombre}</h2>
                             <Image src={producto.imagenModal} alt={`Pinda ${producto.nombre}`} width={300} height={300} priority className='w-full' />
                             <p className="text-3xl p-2 mt-1 text-black/70">${producto.precio}</p>
                             <button 
