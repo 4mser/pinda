@@ -59,9 +59,6 @@ const HappyHour = ({ openHappy, handleHappy }) => {
               alt="hH"
               className="w-full object-contain rounded-2xl"
             />
-            <p className="text-center">
-              Aquí podemos poner descuentos o algo interesante
-            </p>
           </motion.div>
         </motion.div>
       )}

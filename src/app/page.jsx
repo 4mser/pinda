@@ -8,6 +8,7 @@ import Pinda3d2 from "@/components/3dpinda2";
 import PindaBottle from "@/components/3dpinda3";
 import Corfo from "@/components/Corfo";
 import Footer from "@/components/Footer";
+import Posts from "@/components/Posts";
 
 export default function Home() {
   return (
@@ -20,7 +21,9 @@ export default function Home() {
         <AutoScroll />
         <Mapa />
         <Tienda />
+        <Posts />
         <Corfo />
+        
       </aside>
       <Footer />
       {/* <PindaBottle /> */}
