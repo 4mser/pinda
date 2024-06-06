@@ -72,12 +72,12 @@ const Cart = ({ openCart, handleCart }) => {
                       <p className="text-black/60">${producto.precio} x {producto.cantidad}</p>
                     </div>
                   </div>
-                  <div className="flex items-center">
-                    <button onClick={() => removeFromCart(producto)} className="bg-gradient-to-br from-orange-300 to-red-400 px-2 py-1 rounded-full h-7 w-7 mr-2">
+                  <div className="flex items-center w-fit">
+                    <button onClick={() => removeFromCart(producto)} className="bg-gradient-to-br from-orange-300 to-red-400 p-1 rounded-full h-5 w-5 mr-2">
                       <Image src="/svg/minus.svg" className="opacity-50" alt="remove" width={20} height={20} />
                     </button>
                     <p className="pr-2 text-black/70 text-lg">{producto.cantidad} Un </p>
-                    <button onClick={() => addToCart(producto)} className="bg-gradient-to-br from-yellow-300 to-green-400 px-2 py-1 rounded-full h-7 w-7">
+                    <button onClick={() => addToCart(producto)} className="bg-gradient-to-br from-yellow-300 to-green-400 p-1 rounded-full h-5 w-5">
                       <Image src="/svg/add2.svg" className="opacity-50" alt="add" width={20} height={20} />
                     </button>
                   </div>
