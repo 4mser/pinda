@@ -4,6 +4,7 @@ import Topbar from "@/components/topbar";
 import Navbar from "@/components/navbar";
 import Banner from "@/components/banner"
 import Image from "next/image";
+import { CartProvider } from "../../contexts/CartContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,18 +23,20 @@ export default function RootLayout({ children }) {
         />
       </head>
 
-      <body>
-        <Banner />
-        <Topbar text={'Menu'} >
-          <Image
-              src={"/icons/menudoble.svg"}
-              width={28}
-              height={20}
-              className="md:invert"
-            />
-        </Topbar>
-        {children}
-      </body>
+      <CartProvider>
+        <body>
+          <Banner />
+          <Topbar text={'Menu'} >
+            <Image
+                src={"/icons/menudoble.svg"}
+                width={28}
+                height={20}
+                className="md:invert"
+              />
+          </Topbar>
+          {children}
+        </body>
+      </CartProvider>
     </html>
   );
 }

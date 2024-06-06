@@ -14,6 +14,10 @@ const CategoriasData = [
     icono: "prop_3.svg",
   },
   {
+    id: 3,
+    icono: "prop_4.svg",
+  },
+  {
     id: 4,
     icono: "prop_5.svg",
   },
@@ -29,7 +33,7 @@ const generateCategoriaElements = (categorias) => {
       key={index}
       className={` flex items-center`}
     >
-        <img src={`/banners/propiedades/${categoria.icono}`} alt=""  className="w-20 h-20" />
+        <img src={`/banners/propiedades/${categoria.icono}`} alt=""  className={`${categoria.id === 3 ? '"w-12 h-12 "' : 'w-20 h-20'}`} />
     </div>
   ));
 };

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const HappyHour = ({ openHappy, handleHappy }) => {
+const Colibri = ({ openHappy, handleHappy }) => {
   const happyVariants = {
     open: {
       opacity: 1,
@@ -66,4 +66,4 @@ const HappyHour = ({ openHappy, handleHappy }) => {
   );
 };
 
-export default HappyHour;
+export default Colibri;
