@@ -46,7 +46,7 @@ const Cart = ({ openCart, handleCart }) => {
     <AnimatePresence>
       {openCart && (
         <motion.div
-          className="fixed z-50 left-0 top-0 w-full h-[100dvh] backdrop-blur-xl flex justify-end items-center"
+          className="fixed z-[100] left-0 top-0 w-full h-[100dvh] backdrop-blur-xl flex justify-end items-center"
           variants={backdropCartVariants}
           initial="closed"
           animate="open"
