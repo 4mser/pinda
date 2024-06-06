@@ -68,24 +68,28 @@ const Cart = ({ openCart, handleCart }) => {
                   <div className="flex items-center gap-4">
                     <Image src={producto.imagen} alt={producto.nombre} width={50} height={50} className="rounded" />
                     <div>
-                      <h3 className="text-lg">{producto.nombre}</h3>
-                      <p>${producto.precio} x {producto.cantidad}</p>
+                      <h3 className="text-lg text-black/80">Pinda {producto.nombre}</h3>
+                      <p className="text-black/60">${producto.precio} x {producto.cantidad}</p>
                     </div>
                   </div>
                   <div className="flex items-center">
-                    <button onClick={() => removeFromCart(producto)} className="bg-red-500 text-white px-2 py-1 rounded mr-2">
-                      <Image src="/svg/remove.svg" alt="remove" width={20} height={20} />
+                    <button onClick={() => removeFromCart(producto)} className="bg-gradient-to-br from-orange-300 to-red-400 px-2 py-1 rounded-full h-7 w-7 mr-2">
+                      <Image src="/svg/minus.svg" className="opacity-50" alt="remove" width={20} height={20} />
                     </button>
-                    <button onClick={() => addToCart(producto)} className="bg-green-500 text-white px-2 py-1 rounded">
-                      <Image src="/svg/add.svg" alt="add" width={20} height={20} />
+                    <p className="pr-2 text-black/70 text-lg">{producto.cantidad} Un </p>
+                    <button onClick={() => addToCart(producto)} className="bg-gradient-to-br from-yellow-300 to-green-400 px-2 py-1 rounded-full h-7 w-7">
+                      <Image src="/svg/add2.svg" className="opacity-50" alt="add" width={20} height={20} />
                     </button>
                   </div>
                 </li>
               ))}
             </ul>
             <div className="mt-4 border-t pt-4">
-              <h3 className="text-lg font-bold">Total: ${totalPrice.toFixed(3)}</h3>
-              <button className="mt-4 bg-green-500 text-white px-4 py-2 rounded w-full">
+              <div className="w-full flex justify-between items-center">
+                <h3 className="text-xl font-bold text-black/70">Total: </h3>
+                <h3 className="text-xl font-bold text-black/70">${totalPrice.toFixed(3)}</h3>
+              </div>
+              <button className="mt-4 bg-gradient-to-br from-emerald-300 to-cyan-600 text-white px-4 py-2 rounded w-full">
                 Proceder al Pago
               </button>
             </div>
