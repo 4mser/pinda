@@ -14,13 +14,13 @@ const menuItems = [
 
 const backdropVariants = {
   open: {
-    backgroundColor: "rgba(0, 0, 0, 0.8)",
-    transition: { duration: 0.3 },
-  },
-  closed: {
-    backgroundColor: "rgba(0, 0, 0, 0)",
-    transition: { duration: 0.3 }
-  },
+      opacity: 1,
+      transition: { duration: 0.3 },
+    },
+    closed: {
+      opacity: 0,
+      transition: { duration: 0.3 },
+    },
 };
 
 const listItemVariants = {
@@ -62,7 +62,7 @@ const LeftMenu = ({ openMenu, handleMenu }) => {
     <AnimatePresence>
       {openMenu && (
         <motion.div
-          className="fixed z-[100] left-0 top-0 w-full h-[100vh]"
+          className="fixed z-50 left-0 top-0 w-full min-h-[100dvh] backdrop-blur-xl"
           variants={backdropVariants}
           initial="closed"
           animate="open"

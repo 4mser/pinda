@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { productos } from '@/data/Productos'; // Importar los productos desde una ruta externa
+import { productos } from '@/data/Productos';
 import { useCart } from '../../contexts/CartContext';
 
 const modalVariants = {
@@ -91,6 +91,7 @@ const ProductoModal = ({ producto, isOpen, onClose }) => {
 };
 
 const Tienda = () => {
+    const { addToCart } = useCart();
     const [productoSeleccionado, setProductoSeleccionado] = useState('kombuchas');
     const [modalProducto, setModalProducto] = useState(null);
     const [minHeight, setMinHeight] = useState(0);
@@ -108,6 +109,10 @@ const Tienda = () => {
 
     const handleCloseModal = () => {
         setModalProducto(null);
+    };
+
+    const handleAddProduct = (producto) => {
+        addToCart(producto);
     };
 
     const containerVariants = {
@@ -185,6 +190,10 @@ const Tienda = () => {
                                 width={25}
                                 height={25}
                                 className="translate-y-1.5 hover:scale-110"
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    handleAddProduct(producto);
+                                }}
                             />
                         </div>
                     </motion.div>

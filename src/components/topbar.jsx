@@ -3,8 +3,9 @@ import Image from "next/image";
 import React, { useState } from "react";
 import Colibri from "./colibri";
 import LeftMenu from "./left-menu";
-import Cart from "./Cart"; // Importar el nuevo componente de carrito
+import Cart from "./Cart";
 import Link from "next/link";
+import CartIcon from "./CartIcon";
 
 const Topbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -44,9 +45,7 @@ const Topbar = () => {
           />
         </Link>
         <div className="flex flex-row gap-5 md:absolute right-10">
-          <button onClick={handleCart}>
-            <Image src={"/svg/bag.svg"} width={30} height={30} className="md:w-12" />
-          </button>
+          <CartIcon handleCart={handleCart} />
           <button onClick={handleHappy}>
             <Image src={"/svg/colibri_chico.svg"} width={25} height={25} className="md:w-9" />
           </button>
